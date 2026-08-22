@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Departamento de Salud Digital</title>
+    <title>Departamento de Salud Digital | Facultad de Medicina UNAM</title>
 
     <style>
 
-        /* ==============================
+        /* =====================================================
            CONFIGURACIÓN GENERAL
-        ============================== */
+        ===================================================== */
 
         * {
             margin: 0;
@@ -19,419 +18,668 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: white;
+            background: #ffffff;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
 
-        /* ==============================
+        /* =====================================================
            BARRA SUPERIOR
-        ============================== */
+        ===================================================== */
 
-        .barra-superior {
+        .topbar {
             width: 100%;
             height: 86px;
-
-            background: #0B416D;
-
+            background: #064475;
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             padding: 0 55px;
-
-            position: relative;
-            z-index: 1000;
+            color: white;
         }
 
 
-        /* ==============================
-           LOGOTIPO
-        ============================== */
+        /* LOGO */
 
-        .logo {
+        .logo-area {
             display: flex;
             align-items: center;
-
-            height: 100%;
+            gap: 15px;
         }
 
-        .logo img {
-            height: 58px;
+        .logo-area img {
+            height: 55px;
             width: auto;
-
             object-fit: contain;
         }
 
+        .logo-text {
+            border-left: 1px solid rgba(255,255,255,0.5);
+            padding-left: 15px;
+        }
 
-        /* ==============================
+        .logo-text .facultad {
+            font-size: 11px;
+            margin-bottom: 3px;
+            opacity: 0.9;
+        }
+
+        .logo-text .departamento {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+        /* =====================================================
            MENÚ
-        ============================== */
+        ===================================================== */
 
         .menu {
             display: flex;
             align-items: center;
-
-            gap: 38px;
-
-            height: 100%;
+            gap: 34px;
         }
 
-        .menu a,
-        .menu-boton {
+        .menu a {
             color: white;
-
-            text-decoration: none;
-
             font-size: 16px;
-
-            font-weight: 600;
-
-            white-space: nowrap;
-
-            cursor: pointer;
-
-            transition: 0.3s ease;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        .menu a:hover,
-        .menu-boton:hover {
-            color: #D5B000;
+        .menu a:hover {
+            color: #d8b500;
         }
 
-
-        /* ==============================
-           MENÚ DESPLEGABLE
-        ============================== */
-
-        .dropdown {
+        .menu-item {
             position: relative;
-
-            height: 100%;
-
-            display: flex;
-            align-items: center;
         }
 
-        .menu-boton {
-            display: flex;
-            align-items: center;
-
-            gap: 8px;
-        }
-
-        .flecha {
-            font-size: 13px;
-
-            transition: transform 0.3s ease;
-        }
-
-        .dropdown:hover .flecha {
-            transform: rotate(180deg);
+        .menu-item span {
+            margin-left: 5px;
+            font-size: 12px;
         }
 
 
-        /* SUBMENÚ */
-
-        .submenu {
-            position: absolute;
-
-            top: 86px;
-            left: -15px;
-
-            min-width: 210px;
-
-            background: white;
-
-            border-top: 3px solid #D5B000;
-
-            box-shadow: 0 8px 20px rgba(0,0,0,0.18);
-
-            display: none;
-
-            flex-direction: column;
-        }
-
-        .submenu a {
-            color: #0B416D;
-
-            padding: 14px 18px;
-
-            font-size: 14px;
-
-            font-weight: 500;
-
-            transition: 0.2s ease;
-        }
-
-        .submenu a:hover {
-            background: #f1f4f6;
-
-            color: #0B416D;
-        }
-
-        .dropdown:hover .submenu {
-            display: flex;
-        }
-
-
-        /* ==============================
+        /* =====================================================
            ICONO DE BÚSQUEDA
-        ============================== */
+        ===================================================== */
 
-        .busqueda {
-            width: 21px;
-            height: 21px;
-
+        .search-icon {
+            width: 19px;
+            height: 19px;
             border: 2px solid white;
-
             border-radius: 50%;
-
             position: relative;
-
-            cursor: pointer;
-
-            margin-left: 3px;
+            display: inline-block;
         }
 
-        .busqueda::after {
+        .search-icon::after {
             content: "";
-
-            position: absolute;
-
-            width: 9px;
+            width: 8px;
             height: 2px;
-
             background: white;
-
-            right: -7px;
-            bottom: -4px;
-
-            transform: rotate(-48deg);
-
-            border-radius: 2px;
+            position: absolute;
+            right: -6px;
+            bottom: -3px;
+            transform: rotate(-45deg);
         }
 
 
-        /* ==============================
+        /* =====================================================
+           CONTENIDO PRINCIPAL
+        ===================================================== */
+
+        main {
+            min-height: 600px;
+            padding: 60px 8%;
+            background: white;
+        }
+
+        .titulo-principal {
+            text-align: center;
+            color: #064475;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .texto-principal {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.8;
+            color: #555;
+            font-size: 18px;
+        }
+
+
+        /* =====================================================
+           PIE DE PÁGINA
+        ===================================================== */
+
+        footer {
+            background: #303030;
+            color: white;
+            padding: 70px 13% 30px;
+        }
+
+
+        /* CONTENIDO DEL FOOTER */
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* TÍTULOS */
+
+        .footer-column h3 {
+            font-size: 21px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+
+        /* TEXTO */
+
+        .footer-column p {
+            font-size: 18px;
+            line-height: 1.65;
+            margin-bottom: 8px;
+            color: #eeeeee;
+        }
+
+
+        /* DIRECCIÓN */
+
+        .direccion {
+            margin-top: 10px;
+        }
+
+
+        /* =====================================================
+           MAPA
+        ===================================================== */
+
+        .mapa {
+            width: 100%;
+            height: 245px;
+            margin-top: 35px;
+            border: none;
+        }
+
+
+        /* =====================================================
+           REDES SOCIALES
+        ===================================================== */
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 19px;
+            font-weight: bold;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .social:hover {
+            transform: translateY(-4px);
+            opacity: 0.85;
+        }
+
+        .facebook {
+            background: #4267B2;
+        }
+
+        .x {
+            background: #000000;
+        }
+
+        .youtube {
+            background: #b31217;
+        }
+
+        .instagram {
+            background: #e1306c;
+        }
+
+        .tiktok {
+            background: #000000;
+        }
+
+        .spotify {
+            background: #1DB954;
+        }
+
+
+        /* =====================================================
+           LOGOS DEL FOOTER
+        ===================================================== */
+
+        .logos-footer {
+            margin-top: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .logo-gaceta {
+            width: 270px;
+            max-width: 100%;
+        }
+
+        .logo-facmed {
+            width: 430px;
+            max-width: 100%;
+        }
+
+
+        /* =====================================================
+           COPYRIGHT
+        ===================================================== */
+
+        .copyright {
+            text-align: center;
+            margin-top: 75px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .copyright p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #eeeeee;
+            margin: 3px 0;
+        }
+
+
+        /* =====================================================
            RESPONSIVE
-        ============================== */
+        ===================================================== */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
 
-            .barra-superior {
-                height: auto;
-
-                min-height: 75px;
-
-                padding: 12px 25px;
-
-                flex-wrap: wrap;
+            .topbar {
+                padding: 0 25px;
             }
 
-            .logo img {
-                height: 48px;
+            .menu {
+                gap: 18px;
+            }
+
+            .menu a {
+                font-size: 14px;
+            }
+
+            footer {
+                padding-left: 7%;
+                padding-right: 7%;
+            }
+
+        }
+
+
+        @media (max-width: 768px) {
+
+            .topbar {
+                height: auto;
+                min-height: 75px;
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo-area {
+                width: 100%;
+                justify-content: center;
             }
 
             .menu {
                 width: 100%;
-
                 justify-content: center;
-
                 flex-wrap: wrap;
+                gap: 15px;
+            }
 
-                gap: 20px;
+            .menu a {
+                font-size: 13px;
+            }
 
-                padding-top: 12px;
+            main {
+                padding: 40px 20px;
+            }
+
+            .titulo-principal {
+                font-size: 30px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            footer {
+                padding: 50px 25px 25px;
+            }
+
+            .copyright {
+                margin-top: 50px;
             }
 
         }
 
 
-        @media (max-width: 600px) {
+        @media (max-width: 480px) {
 
-            .barra-superior {
-                justify-content: center;
+            .logo-area img {
+                height: 45px;
+            }
+
+            .logo-text .departamento {
+                font-size: 15px;
             }
 
             .menu {
-                gap: 14px;
+                gap: 10px;
             }
 
-            .menu a,
-            .menu-boton {
-                font-size: 13px;
+            .menu a {
+                font-size: 12px;
+            }
+
+            .footer-column p {
+                font-size: 16px;
+            }
+
+            .logo-facmed {
+                width: 100%;
             }
 
         }
 
     </style>
-
 </head>
 
 
 <body>
 
 
-    <!-- =================================
-         BARRA SUPERIOR
-    ================================== -->
+<!-- =========================================================
+     BARRA SUPERIOR
+========================================================= -->
 
-    <header class="barra-superior">
+<header class="topbar">
+
+    <div class="logo-area">
+
+        <!-- CAMBIA ESTA RUTA POR TU LOGO -->
+        <img src="imagenes/logo-salud-digital.png"
+             alt="Departamento de Salud Digital">
+
+        <div class="logo-text">
+
+            <div class="facultad">
+                Facultad de Medicina
+            </div>
+
+            <div class="departamento">
+                Departamento de Salud Digital
+            </div>
+
+        </div>
+
+    </div>
 
 
-        <!-- LOGO -->
+    <nav class="menu">
 
-        <div class="logo">
+        <a href="#inicio">
+            Inicio
+        </a>
 
-            <img
-                src="logo.png"
-                alt="Departamento de Salud Digital"
-            >
+        <a href="#departamento">
+            Departamento <span>⌄</span>
+        </a>
+
+        <a href="#alumnos">
+            Alumnos <span>⌄</span>
+        </a>
+
+        <a href="#investigacion">
+            Investigación <span>⌄</span>
+        </a>
+
+        <a href="#endiba">
+            ENDIBA
+        </a>
+
+        <a href="#buscar">
+            <span class="search-icon"></span>
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     CONTENIDO PRINCIPAL
+========================================================= -->
+
+<main id="inicio">
+
+    <h1 class="titulo-principal">
+        Departamento de Salud Digital
+    </h1>
+
+    <p class="texto-principal">
+
+        Bienvenido al sitio web del Departamento de Salud Digital
+        de la Facultad de Medicina de la Universidad Nacional
+        Autónoma de México.
+
+    </p>
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <!-- =================================================
+             COLUMNA IZQUIERDA
+        ================================================== -->
+
+        <div class="footer-column">
+
+            <h3>
+                Contacto:
+            </h3>
+
+            <p>
+                Departamento de Salud Digital
+            </p>
+
+            <p>
+                FACULTAD DE MEDICINA, CIRCUITO INTERIOR,
+                CIUDAD UNIVERSITARIA, AV. UNIVERSIDAD 3000,
+                CP 04510
+            </p>
+
+            <p>
+                Edificio “A” Basamento
+            </p>
+
+            <p>
+                Tel: 5556232300
+            </p>
+
+
+            <!-- MAPA -->
+
+            <iframe
+                class="mapa"
+                src="https://www.google.com/maps?q=Facultad%20de%20Medicina%20UNAM&output=embed"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
 
         </div>
 
 
-        <!-- MENÚ -->
 
-        <nav class="menu">
+        <!-- =================================================
+             COLUMNA DERECHA
+        ================================================== -->
 
+        <div class="footer-column">
 
-            <!-- INICIO -->
+            <h3>
+                Directorio:
+            </h3>
 
-            <a href="#">
-                Inicio
-            </a>
+            <div class="direccion">
 
+                <p>
+                    Dr. Alejandro Alayola Sansores,
+                    Jefe del Departamento
+                </p>
 
-            <!-- DEPARTAMENTO -->
+                <p>
+                    Dr. Jorge Martínez López,
+                    Coordinador de Investigación y Desarrollo
+                </p>
 
-            <div class="dropdown">
+                <p>
+                    Dra. Verónica Daniela Durán Pérez,
+                    Coordinadora de Evaluación
+                </p>
 
-                <div class="menu-boton">
-
-                    Departamento
-
-                    <span class="flecha">
-                        ▾
-                    </span>
-
-                </div>
-
-
-                <div class="submenu">
-
-                    <a href="#">
-                        ¿Quiénes somos?
-                    </a>
-
-                    <a href="#">
-                        Misión y visión
-                    </a>
-
-                    <a href="#">
-                        Personal
-                    </a>
-
-                    <a href="#">
-                        Contacto
-                    </a>
-
-                </div>
+                <p>
+                    Ing. Fabian Fernández Saldivar,
+                    Coordinador de Enseñanza
+                </p>
 
             </div>
 
 
-            <!-- ALUMNOS -->
 
-            <div class="dropdown">
+            <!-- REDES SOCIALES -->
 
-                <div class="menu-boton">
+            <div class="social-icons">
 
-                    Alumnos
+                <a href="#" class="social facebook" aria-label="Facebook">
+                    f
+                </a>
 
-                    <span class="flecha">
-                        ▾
-                    </span>
+                <a href="#" class="social x" aria-label="X">
+                    X
+                </a>
 
-                </div>
+                <a href="#" class="social youtube" aria-label="YouTube">
+                    ▶
+                </a>
 
+                <a href="#" class="social instagram" aria-label="Instagram">
+                    ◎
+                </a>
 
-                <div class="submenu">
+                <a href="#" class="social tiktok" aria-label="TikTok">
+                    ♪
+                </a>
 
-                    <a href="#">
-                        Cursos
-                    </a>
-
-                    <a href="#">
-                        Aula virtual
-                    </a>
-
-                    <a href="#">
-                        Recursos
-                    </a>
-
-                    <a href="#">
-                        Actividades
-                    </a>
-
-                </div>
+                <a href="#" class="social spotify" aria-label="Spotify">
+                    ●
+                </a>
 
             </div>
 
 
-            <!-- INVESTIGACIÓN -->
 
-            <div class="dropdown">
+            <!-- LOGOS -->
 
-                <div class="menu-boton">
+            <div class="logos-footer">
 
-                    Investigación
+                <!-- CAMBIA ESTAS RUTAS POR TUS IMÁGENES -->
 
-                    <span class="flecha">
-                        ▾
-                    </span>
+                <img
+                    src="imagenes/gaceta.png"
+                    alt="Gaceta Facultad de Medicina"
+                    class="logo-gaceta">
 
-                </div>
-
-
-                <div class="submenu">
-
-                    <a href="#">
-                        Proyectos
-                    </a>
-
-                    <a href="#">
-                        Publicaciones
-                    </a>
-
-                    <a href="#">
-                        Líneas de investigación
-                    </a>
-
-                </div>
+                <img
+                    src="imagenes/logo-facmed-475.png"
+                    alt="Facultad de Medicina UNAM"
+                    class="logo-facmed">
 
             </div>
 
+        </div>
 
-            <!-- ENDIBA -->
-
-            <a href="#">
-                ENDIBA
-            </a>
+    </div>
 
 
-            <!-- BÚSQUEDA -->
 
-            <div class="busqueda"></div>
+    <!-- =====================================================
+         COPYRIGHT
+    ====================================================== -->
 
+    <div class="copyright">
 
-        </nav>
+        <p>
+            Hecho en México, Universidad Nacional Autónoma de México
+            (UNAM), Facultad de Medicina, todos los derechos reservados 2026.
+        </p>
 
-    </header>
+        <p>
+            Esta página puede ser reproducida con fines no lucrativos,
+            siempre y cuando no se mutile, se cite la fuente completa
+            y su dirección electrónica.
+        </p>
+
+        <p>
+            De otra forma, requiere permiso previo por escrito de la institución.
+        </p>
+
+    </div>
+
+</footer>
 
 
 </body>
-
 </html>
