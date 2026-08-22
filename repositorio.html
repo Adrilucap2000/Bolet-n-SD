@@ -1,1 +1,1617 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Hemeroteca | Boletín SD</title>
+
+    <style>
+
+        /* =====================================================
+           CONFIGURACIÓN GENERAL
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f8fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           ENCABEZADO
+        ===================================================== */
+
+        header {
+            background: #084B7A;
+            color: white;
+            padding: 22px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+        }
+
+
+        /* Logo / nombre */
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 23px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+
+        /* Navegación */
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+
+            position: relative;
+
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.75;
+        }
+
+
+        /* Línea debajo del apartado activo */
+
+        nav a.activo::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 100%;
+            height: 2px;
+
+            background: white;
+        }
+
+
+        /* =====================================================
+           CONTENEDOR PRINCIPAL
+        ===================================================== */
+
+        main {
+            max-width: 1250px;
+            margin: auto;
+            padding: 70px 35px 100px;
+        }
+
+
+        /* =====================================================
+           ENCABEZADO DE HEMEROTECA
+        ===================================================== */
+
+        .intro {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 70px;
+        }
+
+        .etiqueta {
+            display: inline-block;
+
+            color: #084B7A;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 14px;
+        }
+
+        .intro h1 {
+            color: #084B7A;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: clamp(38px, 5vw, 60px);
+
+            font-weight: normal;
+
+            margin-bottom: 18px;
+        }
+
+        .intro p {
+            color: #666;
+
+            font-size: 17px;
+
+            max-width: 720px;
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           LÍNEA EDITORIAL
+        ===================================================== */
+
+        .linea-editorial {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+
+            margin-bottom: 35px;
+        }
+
+        .linea-editorial::before,
+        .linea-editorial::after {
+            content: "";
+
+            height: 1px;
+
+            background: #d8dde2;
+
+            flex: 1;
+        }
+
+        .linea-editorial span {
+            color: #084B7A;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           SECCIÓN DE AÑO
+        ===================================================== */
+
+        .year-section {
+            margin-bottom: 75px;
+        }
+
+        .year-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            margin-bottom: 30px;
+        }
+
+        .year-title h2 {
+            color: #222;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 30px;
+
+            font-weight: normal;
+        }
+
+        .year-title span {
+            color: #999;
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           GRID DE EDICIONES
+        ===================================================== */
+
+        .ediciones-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 35px;
+        }
+
+
+        /* =====================================================
+           TARJETA DE EDICIÓN
+        ===================================================== */
+
+        .edicion-card {
+
+            background: white;
+
+            border: 1px solid #e4e7ea;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+            cursor: pointer;
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+
+            overflow: hidden;
+        }
+
+        .edicion-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 18px 40px rgba(0,0,0,0.12);
+        }
+
+
+        /* Imagen de portada */
+
+        .portada-container {
+            position: relative;
+
+            background: #e9edf0;
+
+            overflow: hidden;
+
+            aspect-ratio: 3 / 4;
+        }
+
+        .portada-container img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.5s ease;
+        }
+
+        .edicion-card:hover
+        .portada-container img {
+
+            transform: scale(1.035);
+        }
+
+
+        /* Overlay */
+
+        .overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(8,75,122,0.88),
+                    rgba(8,75,122,0.05)
+                );
+
+            display: flex;
+
+            align-items: flex-end;
+
+            padding: 25px;
+
+            opacity: 0;
+
+            transition: opacity 0.35s ease;
+        }
+
+        .edicion-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay span {
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* Información */
+
+        .card-info {
+            padding: 23px 22px 26px;
+        }
+
+        .card-number {
+
+            color: #084B7A;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 7px;
+        }
+
+        .card-info h3 {
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 23px;
+
+            font-weight: normal;
+
+            line-height: 1.25;
+
+            color: #222;
+
+            margin-bottom: 10px;
+        }
+
+        .card-date {
+
+            color: #888;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           DETALLE DE EDICIÓN
+        ===================================================== */
+
+        #detalle-edicion {
+
+            display: none;
+
+            background: white;
+
+            border-top: 5px solid #084B7A;
+
+            box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+
+            margin-top: 60px;
+
+            padding: 55px;
+        }
+
+        .detalle-contenido {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(280px, 420px)
+                1fr;
+
+            gap: 65px;
+
+            align-items: center;
+        }
+
+
+        /* Portada grande */
+
+        .detalle-portada {
+
+            width: 100%;
+
+            max-width: 420px;
+
+            margin: auto;
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.18);
+        }
+
+        .detalle-portada img {
+
+            display: block;
+
+            width: 100%;
+
+            height: auto;
+        }
+
+
+        /* Texto */
+
+        .detalle-texto .numero {
+
+            color: #084B7A;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        .detalle-texto h2 {
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            color: #222;
+
+            font-size: clamp(34px, 4vw, 52px);
+
+            line-height: 1.12;
+
+            font-weight: normal;
+
+            margin-bottom: 12px;
+        }
+
+        .detalle-fecha {
+
+            color: #888;
+
+            font-size: 14px;
+
+            margin-bottom: 28px;
+        }
+
+        .detalle-descripcion {
+
+            color: #555;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin-bottom: 28px;
+
+            max-width: 650px;
+        }
+
+
+        /* Lista temática */
+
+        .temas {
+
+            margin-bottom: 32px;
+        }
+
+        .temas-titulo {
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            color: #084B7A;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        .temas-lista {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+        .tema {
+
+            background: #eef4f8;
+
+            color: #084B7A;
+
+            padding: 7px 12px;
+
+            font-size: 12px;
+
+            border-radius: 2px;
+        }
+
+
+        /* Botones */
+
+        .botones {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 13px 21px;
+
+            border: none;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 0.5px;
+
+            transition: all 0.3s ease;
+        }
+
+        .btn-principal {
+
+            background: #084B7A;
+
+            color: white;
+        }
+
+        .btn-principal:hover {
+
+            background: #063653;
+
+            transform: translateY(-2px);
+        }
+
+        .btn-secundario {
+
+            background: white;
+
+            color: #084B7A;
+
+            border: 1px solid #084B7A;
+        }
+
+        .btn-secundario:hover {
+
+            background: #eef4f8;
+        }
+
+
+        /* =====================================================
+           VISOR PDF
+        ===================================================== */
+
+        #visor-pdf {
+
+            display: none;
+
+            margin-top: 55px;
+
+            background: #202428;
+
+            padding: 25px;
+        }
+
+        .visor-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 20px;
+        }
+
+        .visor-titulo {
+
+            color: white;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 22px;
+        }
+
+        .visor-cerrar {
+
+            background: transparent;
+
+            border: 1px solid rgba(255,255,255,0.5);
+
+            color: white;
+
+            padding: 9px 15px;
+
+            cursor: pointer;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .visor-cerrar:hover {
+
+            background: white;
+
+            color: #084B7A;
+        }
+
+        .pdf-container {
+
+            background: #555;
+
+            width: 100%;
+
+            min-height: 850px;
+        }
+
+        .pdf-container iframe {
+
+            display: block;
+
+            width: 100%;
+
+            height: 850px;
+
+            border: none;
+        }
+
+
+        /* =====================================================
+           PIE DE PÁGINA
+        ===================================================== */
+
+        footer {
+
+            background: #063653;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 25px;
+
+            font-size: 13px;
+
+            margin-top: 0;
+        }
+
+        footer p {
+
+            opacity: 0.85;
+
+            margin-bottom: 6px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            header {
+
+                padding: 18px 22px;
+
+                flex-direction: column;
+
+                gap: 15px;
+
+            }
+
+            nav {
+
+                gap: 16px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            nav a {
+
+                font-size: 13px;
+            }
+
+            main {
+
+                padding: 50px 20px 70px;
+            }
+
+            #detalle-edicion {
+
+                padding: 35px 25px;
+            }
+
+            .detalle-contenido {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .detalle-portada {
+
+                max-width: 330px;
+            }
+
+            .detalle-texto h2 {
+
+                font-size: 38px;
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .intro {
+
+                margin-bottom: 50px;
+            }
+
+            .intro h1 {
+
+                font-size: 40px;
+            }
+
+            .intro p {
+
+                font-size: 15px;
+            }
+
+            .ediciones-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            #detalle-edicion {
+
+                padding: 28px 18px;
+            }
+
+            .detalle-texto h2 {
+
+                font-size: 32px;
+            }
+
+            .detalle-descripcion {
+
+                font-size: 15px;
+            }
+
+            .pdf-container,
+            .pdf-container iframe {
+
+                min-height: 650px;
+
+                height: 650px;
+            }
+
+            #visor-pdf {
+
+                padding: 12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ENCABEZADO
+===================================================== -->
+
+<header>
+
+    <a href="index.html" class="logo">
+        Boletín SD
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="boletin.html">
+            Boletín SD
+        </a>
+
+        <a href="repositorio.html" class="activo">
+            Hemeroteca
+        </a>
+
+        <a href="contacto.html">
+            Contacto
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     CONTENIDO PRINCIPAL
+===================================================== -->
+
+<main>
+
+
+    <!-- INTRODUCCIÓN -->
+
+    <section class="intro">
+
+        <div class="etiqueta">
+            Archivo editorial
+        </div>
+
+        <h1>
+            Hemeroteca
+        </h1>
+
+        <p>
+            Explora las ediciones anteriores del
+            <strong>Boletín de Salud Digital</strong>.
+            Un espacio para conservar y consultar
+            las publicaciones de nuestra comunidad académica.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         EDICIONES 2026
+    ================================================== -->
+
+    <section class="year-section">
+
+        <div class="linea-editorial">
+            <span>Ediciones</span>
+        </div>
+
+        <div class="year-title">
+
+            <h2>
+                2026
+            </h2>
+
+            <span>
+                Ediciones disponibles
+            </span>
+
+        </div>
+
+
+        <div class="ediciones-grid">
+
+
+            <!-- EDICIÓN 05 -->
+
+            <article
+                class="edicion-card"
+                onclick="mostrarEdicion(5)"
+            >
+
+                <div class="portada-container">
+
+                    <img
+                        src="portadas/portada-05.jpg"
+                        alt="Portada de la edición 05 del Boletín de Salud Digital"
+                    >
+
+                    <div class="overlay">
+
+                        <span>
+                            Ver información →
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <div class="card-number">
+                        Edición No. 05
+                    </div>
+
+                    <h3>
+                        Innovación y tecnología
+                    </h3>
+
+                    <div class="card-date">
+                        Agosto 2026
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- EDICIÓN 04 -->
+
+            <article
+                class="edicion-card"
+                onclick="mostrarEdicion(4)"
+            >
+
+                <div class="portada-container">
+
+                    <img
+                        src="portadas/portada-04.jpg"
+                        alt="Portada de la edición 04 del Boletín de Salud Digital"
+                    >
+
+                    <div class="overlay">
+
+                        <span>
+                            Ver información →
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <div class="card-number">
+                        Edición No. 04
+                    </div>
+
+                    <h3>
+                        Tecnología y educación
+                    </h3>
+
+                    <div class="card-date">
+                        Julio 2026
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- EDICIÓN 03 -->
+
+            <article
+                class="edicion-card"
+                onclick="mostrarEdicion(3)"
+            >
+
+                <div class="portada-container">
+
+                    <img
+                        src="portadas/portada-03.jpg"
+                        alt="Portada de la edición 03 del Boletín de Salud Digital"
+                    >
+
+                    <div class="overlay">
+
+                        <span>
+                            Ver información →
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <div class="card-number">
+                        Edición No. 03
+                    </div>
+
+                    <h3>
+                        Salud digital y comunidad
+                    </h3>
+
+                    <div class="card-date">
+                        Junio 2026
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- EDICIÓN 02 -->
+
+            <article
+                class="edicion-card"
+                onclick="mostrarEdicion(2)"
+            >
+
+                <div class="portada-container">
+
+                    <img
+                        src="portadas/portada-02.jpg"
+                        alt="Portada de la edición 02 del Boletín de Salud Digital"
+                    >
+
+                    <div class="overlay">
+
+                        <span>
+                            Ver información →
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <div class="card-number">
+                        Edición No. 02
+                    </div>
+
+                    <h3>
+                        Transformación digital
+                    </h3>
+
+                    <div class="card-date">
+                        Mayo 2026
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         DETALLE DE LA EDICIÓN
+    ================================================== -->
+
+    <section id="detalle-edicion">
+
+        <div class="detalle-contenido">
+
+
+            <!-- PORTADA -->
+
+            <div class="detalle-portada">
+
+                <img
+                    id="detalle-portada-img"
+                    src=""
+                    alt="Portada de la edición"
+                >
+
+            </div>
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="detalle-texto">
+
+                <div
+                    class="numero"
+                    id="detalle-numero">
+                </div>
+
+                <h2
+                    id="detalle-titulo">
+                </h2>
+
+                <div
+                    class="detalle-fecha"
+                    id="detalle-fecha">
+                </div>
+
+                <p
+                    class="detalle-descripcion"
+                    id="detalle-descripcion">
+                </p>
+
+
+                <div class="temas">
+
+                    <div class="temas-titulo">
+                        En esta edición
+                    </div>
+
+                    <div
+                        class="temas-lista"
+                        id="detalle-temas">
+                    </div>
+
+                </div>
+
+
+                <div class="botones">
+
+                    <button
+                        class="btn btn-principal"
+                        onclick="abrirPDF()"
+                    >
+                        Leer edición completa →
+                    </button>
+
+                    <a
+                        id="boton-descarga"
+                        class="btn btn-secundario"
+                        href=""
+                        download
+                    >
+                        Descargar PDF
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         VISOR PDF
+    ================================================== -->
+
+    <section id="visor-pdf">
+
+        <div class="visor-header">
+
+            <div
+                class="visor-titulo"
+                id="visor-titulo">
+            </div>
+
+            <button
+                class="visor-cerrar"
+                onclick="cerrarPDF()"
+            >
+                Cerrar visor ✕
+            </button>
+
+        </div>
+
+
+        <div class="pdf-container">
+
+            <iframe
+                id="pdf-frame"
+                src=""
+                title="Visor del Boletín de Salud Digital">
+            </iframe>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     PIE DE PÁGINA
+===================================================== -->
+
+<footer>
+
+    <p>
+        Boletín de Salud Digital
+    </p>
+
+    <p>
+        Facultad de Medicina · Salud Digital
+    </p>
+
+</footer>
+
+
+
+<script>
+
+    /* =====================================================
+       INFORMACIÓN DE LAS EDICIONES
+    ===================================================== */
+
+    const ediciones = {
+
+        5: {
+
+            numero: "Edición No. 05",
+
+            titulo:
+                "Innovación y tecnología",
+
+            fecha:
+                "Agosto 2026",
+
+            descripcion:
+                "En esta edición exploramos las tendencias, herramientas y propuestas de innovación que están transformando la salud digital y fortaleciendo la formación de nuestra comunidad académica.",
+
+            portada:
+                "portadas/portada-05.jpg",
+
+            pdf:
+                "ediciones/boletin-05.pdf",
+
+            temas: [
+                "Salud digital",
+                "Innovación",
+                "Tecnología",
+                "Educación médica"
+            ]
+
+        },
+
+
+        4: {
+
+            numero: "Edición No. 04",
+
+            titulo:
+                "Tecnología y educación",
+
+            fecha:
+                "Julio 2026",
+
+            descripcion:
+                "Una edición dedicada al papel de las tecnologías digitales en los procesos de enseñanza, aprendizaje y formación dentro del ámbito de la salud.",
+
+            portada:
+                "portadas/portada-04.jpg",
+
+            pdf:
+                "ediciones/boletin-04.pdf",
+
+            temas: [
+                "Educación",
+                "Tecnología",
+                "Docencia",
+                "Salud digital"
+            ]
+
+        },
+
+
+        3: {
+
+            numero: "Edición No. 03",
+
+            titulo:
+                "Salud digital y comunidad",
+
+            fecha:
+                "Junio 2026",
+
+            descripcion:
+                "En esta edición presentamos contenidos relacionados con la transformación digital, la participación de nuestra comunidad y las nuevas oportunidades que ofrece la tecnología en salud.",
+
+            portada:
+                "portadas/portada-03.jpg",
+
+            pdf:
+                "ediciones/boletin-03.pdf",
+
+            temas: [
+                "Comunidad",
+                "Salud digital",
+                "Tecnología",
+                "Innovación"
+            ]
+
+        },
+
+
+        2: {
+
+            numero: "Edición No. 02",
+
+            titulo:
+                "Transformación digital",
+
+            fecha:
+                "Mayo 2026",
+
+            descripcion:
+                "Una mirada a las herramientas y estrategias que permiten incorporar la transformación digital en los diferentes espacios de formación y práctica en salud.",
+
+            portada:
+                "portadas/portada-02.jpg",
+
+            pdf:
+                "ediciones/boletin-02.pdf",
+
+            temas: [
+                "Transformación digital",
+                "Tecnología",
+                "Innovación",
+                "Formación"
+            ]
+
+        }
+
+    };
+
+
+
+    /* =====================================================
+       VARIABLE PARA SABER QUÉ EDICIÓN ESTÁ ABIERTA
+    ===================================================== */
+
+    let edicionActual = null;
+
+
+
+    /* =====================================================
+       MOSTRAR INFORMACIÓN DE UNA EDICIÓN
+    ===================================================== */
+
+    function mostrarEdicion(numero) {
+
+        const edicion = ediciones[numero];
+
+        if (!edicion) {
+            return;
+        }
+
+        edicionActual = edicion;
+
+
+        /* Portada */
+
+        document.getElementById(
+            "detalle-portada-img"
+        ).src = edicion.portada;
+
+
+        /* Información */
+
+        document.getElementById(
+            "detalle-numero"
+        ).textContent = edicion.numero;
+
+
+        document.getElementById(
+            "detalle-titulo"
+        ).textContent = edicion.titulo;
+
+
+        document.getElementById(
+            "detalle-fecha"
+        ).textContent = edicion.fecha;
+
+
+        document.getElementById(
+            "detalle-descripcion"
+        ).textContent = edicion.descripcion;
+
+
+        /* Temas */
+
+        const temas =
+            document.getElementById(
+                "detalle-temas"
+            );
+
+        temas.innerHTML = "";
+
+
+        edicion.temas.forEach(
+            function(tema) {
+
+                const etiqueta =
+                    document.createElement("span");
+
+                etiqueta.className = "tema";
+
+                etiqueta.textContent = tema;
+
+                temas.appendChild(etiqueta);
+
+            }
+        );
+
+
+        /* Botón descargar */
+
+        document.getElementById(
+            "boton-descarga"
+        ).href = edicion.pdf;
+
+
+        /* Mostrar detalle */
+
+        const detalle =
+            document.getElementById(
+                "detalle-edicion"
+            );
+
+        detalle.style.display = "block";
+
+
+        /* Cerrar visor anterior */
+
+        cerrarPDF();
+
+
+        /* Desplazarse */
+
+        setTimeout(
+            function() {
+
+                detalle.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            },
+            100
+        );
+
+    }
+
+
+
+    /* =====================================================
+       ABRIR PDF
+    ===================================================== */
+
+    function abrirPDF() {
+
+        if (!edicionActual) {
+            return;
+        }
+
+
+        const visor =
+            document.getElementById(
+                "visor-pdf"
+            );
+
+        const frame =
+            document.getElementById(
+                "pdf-frame"
+            );
+
+        const titulo =
+            document.getElementById(
+                "visor-titulo"
+            );
+
+
+        /* Cargar PDF */
+
+        frame.src =
+            edicionActual.pdf;
+
+
+        /* Título */
+
+        titulo.textContent =
+            edicionActual.numero +
+            " · " +
+            edicionActual.fecha;
+
+
+        /* Mostrar visor */
+
+        visor.style.display =
+            "block";
+
+
+        /* Ir al visor */
+
+        setTimeout(
+            function() {
+
+                visor.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            },
+            100
+        );
+
+    }
+
+
+
+    /* =====================================================
+       CERRAR PDF
+    ===================================================== */
+
+    function cerrarPDF() {
+
+        const visor =
+            document.getElementById(
+                "visor-pdf"
+            );
+
+        const frame =
+            document.getElementById(
+                "pdf-frame"
+            );
+
+
+        visor.style.display =
+            "none";
+
+
+        /*
+            Quitamos el PDF del iframe
+            para evitar que siga cargando.
+        */
+
+        frame.src = "";
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
