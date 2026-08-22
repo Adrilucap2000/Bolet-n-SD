@@ -1605,6 +1605,108 @@
     from { opacity:0; transform:translateY(-6px); }
     to { opacity:1; transform:translateY(0); }
 }
+
+/* =====================================================
+   ARTÍCULOS EXPANDIBLES
+===================================================== */
+
+.article-details {
+    display: none !important;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 24px 0 8px;
+    border-top: 1px solid #dfe3e6;
+}
+
+.article-details.visible {
+    display: block !important;
+    animation: articleFadeIn .35s ease both;
+}
+
+.article-details h4 {
+    color: #084B7A;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 1.4;
+    margin: 0 0 15px;
+}
+
+.article-details p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 0 0 15px;
+}
+
+.article-details ul {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 8px 0 18px 22px;
+}
+
+.article-details li {
+    margin-bottom: 6px;
+}
+
+button.article-toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    color: #084B7A;
+    font: inherit;
+    text-align: left;
+}
+
+button.article-toggle:hover {
+    color: #063653;
+}
+
+.article-toggle .close-label {
+    display: none;
+}
+
+.article-toggle.expanded .open-label {
+    display: none;
+}
+
+.article-toggle.expanded .close-label {
+    display: inline;
+}
+
+@keyframes articleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .article-details {
+        margin-top: 16px;
+        padding-top: 18px;
+    }
+
+    .article-details h4 {
+        font-size: 19px;
+    }
+
+    .article-details p,
+    .article-details ul {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+}
 </style>
 </head>
 <body>
@@ -1718,9 +1820,12 @@
 <div class="article-meta">
                 22 de agosto de 2026 · Salud Digital
             </div>
-<a class="read-more" href="#">
-                Leer artículo →
-            </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>Conoce las nuevas herramientas digitales,
+                proyectos y propuestas de innovación que
+                están modificando la manera en que
+                aprendemos, atendemos y comprendemos
+                la salud.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a la tecnología que está transformando
+                la atención en salud, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer artículo →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 </section>
 <!-- =================================================
@@ -1753,9 +1858,11 @@
                     nuevas oportunidades para la
                     práctica médica.
                 </p>
-<a class="read-more" href="#">
-                    Leer más →
-                </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>Una mirada a los avances y
+                    descubrimientos que están generando
+                    nuevas oportunidades para la
+                    práctica médica.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a nuevas perspectivas para la
+                    investigación en salud, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 <!-- NOTICIA 2 -->
 <article class="news-card">
@@ -1777,9 +1884,11 @@
                     fundamentales para la toma de
                     decisiones.
                 </p>
-<a class="read-more" href="#">
-                    Leer más →
-                </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>La información y el análisis de
+                    datos se convierten en herramientas
+                    fundamentales para la toma de
+                    decisiones.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a datos que ayudan a comprender
+                    mejor la salud, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 <!-- NOTICIA 3 -->
 <article class="news-card">
@@ -1801,9 +1910,11 @@
                     los servicios de salud a las
                     personas.
                 </p>
-<a class="read-more" href="#">
-                    Leer más →
-                </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>Las soluciones digitales ofrecen
+                    nuevas posibilidades para acercar
+                    los servicios de salud a las
+                    personas.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a innovación para mejorar la
+                    experiencia del paciente, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 </div>
 </section>
@@ -1836,9 +1947,10 @@
                     procesos, facilitar el acceso a la
                     información y apoyar la atención.
                 </p>
-<a class="read-more" href="#">
-                    Leer más →
-                </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>Tecnologías que permiten mejorar
+                    procesos, facilitar el acceso a la
+                    información y apoyar la atención.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a herramientas digitales para la
+                    práctica médica, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 <!-- IA -->
 <article class="news-card">
@@ -1859,9 +1971,10 @@
                     tienen las nuevas herramientas de
                     inteligencia artificial en salud.
                 </p>
-<a class="read-more" href="#">
-                    Leer más →
-                </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>Una aproximación al papel que
+                    tienen las nuevas herramientas de
+                    inteligencia artificial en salud.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a inteligencia artificial:
+                    oportunidades y retos, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 <!-- TELEMEDICINA -->
 <article class="news-card">
@@ -1882,9 +1995,10 @@
                     las posibilidades de atención y
                     acompañamiento de los pacientes.
                 </p>
-<a class="read-more" href="#">
-                    Leer más →
-                </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>La telemedicina continúa ampliando
+                    las posibilidades de atención y
+                    acompañamiento de los pacientes.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a nuevas posibilidades para la
+                    atención a distancia, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 </div>
 </section>
@@ -1913,9 +2027,12 @@
                     algunos de los desafíos actuales
                     de la atención y educación en salud.
                 </p>
-<a class="read-more" href="#">
-                    Conocer proyecto →
-                </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>Conoce proyectos, iniciativas y
+                    propuestas que buscan aprovechar
+                    la tecnología para responder a
+                    algunos de los desafíos actuales
+                    de la atención y educación en salud.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a ideas que pueden convertirse
+                    en soluciones para la salud, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Conocer proyecto →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 </div>
 </section>
@@ -1941,9 +2058,9 @@
                     Conoce las actividades académicas
                     y formativas de este mes.
                 </p>
-<a class="read-more" href="#">
-                    Leer más →
-                </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>Conoce las actividades académicas
+                    y formativas de este mes.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a nuevas actividades para
+                    nuestra comunidad, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 <article class="small-news">
 <div class="category">
@@ -1957,9 +2074,9 @@
                     Recursos y experiencias para
                     fortalecer la formación.
                 </p>
-<a class="read-more" href="#">
-                    Leer más →
-                </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>Recursos y experiencias para
+                    fortalecer la formación.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a aprender salud digital
+                    desde nuevas perspectivas, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 <article class="small-news">
 <div class="category">
@@ -1973,9 +2090,9 @@
                     Nuevas herramientas para
                     enriquecer los procesos educativos.
                 </p>
-<a class="read-more" href="#">
-                    Leer más →
-                </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>Nuevas herramientas para
+                    enriquecer los procesos educativos.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a tecnología al servicio
+                    de la enseñanza, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 <article class="small-news">
 <div class="category">
@@ -2058,9 +2175,10 @@
                     colaboraciones que generan
                     nuevas oportunidades.
                 </p>
-<a class="read-more" href="#">
-                    Leer más →
-                </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>Conoce iniciativas y
+                    colaboraciones que generan
+                    nuevas oportunidades.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a proyectos que construimos
+                    en comunidad, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 </div>
 </section>
@@ -2112,9 +2230,9 @@
                     Exploramos nuevas formas de
                     comunicar conocimiento.
                 </p>
-<a class="read-more" href="#">
-                    Leer más →
-                </a>
+<div class="article-details"><h4>Conoce más sobre este tema</h4><p>Exploramos nuevas formas de
+                    comunicar conocimiento.</p><p>El objetivo es ampliar la información presentada en esta sección y ofrecer una mirada más cercana a la salud también se comunica
+                    a través del arte, considerando sus posibilidades, retos y utilidad dentro de nuestra comunidad académica.</p><p>La incorporación de herramientas y nuevas ideas debe partir de necesidades reales, acompañarse de una evaluación adecuada y considerar siempre el uso responsable de la información y la tecnología.</p><ul><li>Comprender el contexto antes de implementar una solución.</li><li>Utilizar la tecnología de manera crítica y responsable.</li><li>Compartir experiencias para favorecer el aprendizaje colectivo.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
 </article>
 <article class="small-news">
 <div class="category">
@@ -2187,27 +2305,26 @@
 </footer>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".article-toggle").forEach(function (button) {
-        button.addEventListener("click", function () {
-            const article = button.closest("article, .featured-text");
-            if (!article) return;
-
-            const details = article.querySelector(".article-details");
-            if (!details) return;
-
-            const isOpen = details.classList.toggle("visible");
-
-            button.classList.toggle("expanded", isOpen);
-            button.setAttribute("aria-expanded", isOpen ? "true" : "false");
-
-            if (isOpen) {
-                setTimeout(function () {
-                    const y = article.getBoundingClientRect().top + window.scrollY - 125;
-                    window.scrollTo({ top: y, behavior: "smooth" });
-                }, 100);
-            }
-        });
+  document.querySelectorAll("button.article-toggle").forEach(function(btn) {
+    btn.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const article = btn.closest("article, .featured-text");
+      const details = article && article.querySelector(".article-details");
+      if (!details) return;
+      const open = details.classList.toggle("visible");
+      btn.classList.toggle("expanded", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) {
+        setTimeout(() => {
+          window.scrollTo({
+            top: Math.max(0, article.getBoundingClientRect().top + window.scrollY - 120),
+            behavior: "smooth"
+          });
+        }, 100);
+      }
     });
+  });
 });
 </script></body>
 </html>
