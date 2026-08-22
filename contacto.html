@@ -1,1 +1,1359 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contacto | Boletín SD</title>
+
+
+    <!-- =====================================================
+         EMAILJS
+    ====================================================== -->
+
+    <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+
+    <style>
+
+        /* =====================================================
+           CONFIGURACIÓN GENERAL
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #ffffff;
+
+            color: #222;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+
+            width: 100%;
+
+            background: #084B7A;
+
+            color: white;
+
+            position: relative;
+
+            z-index: 9999;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.12);
+        }
+
+
+        .header-container {
+
+            width: 100%;
+
+            max-width: 1300px;
+
+            min-height: 82px;
+
+            margin: auto;
+
+            padding:
+                0 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        /* =====================================================
+           LOGO
+        ====================================================== */
+
+        .logo {
+
+            display: block;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 30px;
+
+            line-height: 1;
+
+            white-space: nowrap;
+        }
+
+
+        .logo:hover {
+
+            color: white;
+        }
+
+
+        .logo-subtitle {
+
+            display: block;
+
+            margin-top: 7px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 9px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            opacity: .8;
+        }
+
+
+        /* =====================================================
+           NAVEGACIÓN
+        ====================================================== */
+
+        .main-nav {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 32px;
+        }
+
+
+        .main-nav a {
+
+            display: inline-block;
+
+            position: relative;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            padding:
+                32px 0;
+
+            transition:
+                opacity .2s ease;
+        }
+
+
+        .main-nav a:hover {
+
+            color: white;
+
+            opacity: .75;
+        }
+
+
+        .main-nav a.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 22px;
+
+            height: 2px;
+
+            background: white;
+        }
+
+
+        /* =====================================================
+           CONTENIDO
+        ====================================================== */
+
+        main {
+
+            width: 100%;
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding:
+                75px 35px 100px;
+        }
+
+
+        /* =====================================================
+           ENCABEZADO
+        ====================================================== */
+
+        .intro {
+
+            max-width: 900px;
+
+            margin-bottom: 70px;
+        }
+
+
+        .intro-label {
+
+            color: #084B7A;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+
+        .intro h1 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(45px, 6vw, 72px);
+
+            font-weight: normal;
+
+            line-height: 1.05;
+
+            margin-bottom: 30px;
+
+            color: #222;
+        }
+
+
+        .intro p {
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            color: #606060;
+
+            max-width: 850px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .intro strong {
+
+            color: #084B7A;
+        }
+
+
+        /* =====================================================
+           BLOQUE DE PARTICIPACIÓN
+        ====================================================== */
+
+        .participate {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(250px, .8fr)
+                minmax(400px, 1.5fr);
+
+            gap: 70px;
+
+            border-top:
+                3px solid #084B7A;
+
+            padding-top: 45px;
+        }
+
+
+        .participate-info {
+
+            padding-top: 5px;
+        }
+
+
+        .participate-label {
+
+            color: #084B7A;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+
+        .participate-info h2 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 38px;
+
+            font-weight: normal;
+
+            line-height: 1.15;
+
+            margin-bottom: 20px;
+        }
+
+
+        .participate-info p {
+
+            color: #666;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+        }
+
+
+        .requirement {
+
+            border-left:
+                3px solid #084B7A;
+
+            padding:
+                15px 20px;
+
+            background: #f4f7f9;
+
+            color: #555;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        .requirement strong {
+
+            color: #084B7A;
+        }
+
+
+        /* =====================================================
+           FORMULARIO
+        ====================================================== */
+
+        .contact-form {
+
+            width: 100%;
+
+            background: #f7f9fa;
+
+            padding:
+                40px;
+        }
+
+
+        .form-title {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 29px;
+
+            font-weight: normal;
+
+            margin-bottom: 30px;
+        }
+
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .form-group {
+
+            margin-bottom: 20px;
+        }
+
+
+        .form-row .form-group {
+
+            margin-bottom: 0;
+        }
+
+
+        label {
+
+            display: block;
+
+            color: #084B7A;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 8px;
+        }
+
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            border:
+                1px solid #d3d9dd;
+
+            background: white;
+
+            padding:
+                14px 15px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 14px;
+
+            color: #333;
+
+            outline: none;
+
+            transition:
+                border .2s ease,
+                box-shadow .2s ease;
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #084B7A;
+
+            box-shadow:
+                0 0 0 2px rgba(8,75,122,.08);
+        }
+
+
+        textarea {
+
+            min-height: 140px;
+
+            resize: vertical;
+
+            line-height: 1.6;
+        }
+
+
+        select {
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           BOTÓN
+        ====================================================== */
+
+        .submit-button {
+
+            width: 100%;
+
+            border: none;
+
+            background: #084B7A;
+
+            color: white;
+
+            padding:
+                16px 25px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            transition:
+                background .2s ease,
+                transform .2s ease;
+        }
+
+
+        .submit-button:hover {
+
+            background: #063653;
+
+            transform: translateY(-1px);
+        }
+
+
+        .submit-button:disabled {
+
+            opacity: .6;
+
+            cursor: wait;
+
+            transform: none;
+        }
+
+
+        /* =====================================================
+           MENSAJE DE ESTADO
+        ====================================================== */
+
+        #form-status {
+
+            display: none;
+
+            margin-top: 20px;
+
+            padding:
+                15px 18px;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+
+        #form-status.success {
+
+            display: block;
+
+            background: #eaf5ee;
+
+            color: #28643b;
+
+            border-left:
+                3px solid #28643b;
+        }
+
+
+        #form-status.error {
+
+            display: block;
+
+            background: #fbecec;
+
+            color: #8b3030;
+
+            border-left:
+                3px solid #8b3030;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            width: 100%;
+
+            background: #063653;
+
+            color: white;
+
+            text-align: center;
+
+            padding:
+                40px 20px;
+
+            margin-top: 30px;
+        }
+
+
+        footer h3 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 23px;
+
+            font-weight: normal;
+
+            margin-bottom: 8px;
+        }
+
+
+        footer p {
+
+            font-size: 12px;
+
+            opacity: .75;
+
+            margin: 3px 0;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .header-container {
+
+                flex-direction: column;
+
+                padding:
+                    20px;
+            }
+
+
+            .main-nav {
+
+                gap: 22px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .main-nav a {
+
+                padding: 5px 0;
+            }
+
+
+            .main-nav a.active::after {
+
+                bottom: -5px;
+            }
+
+
+            main {
+
+                padding:
+                    55px 25px 80px;
+            }
+
+
+            .participate {
+
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+        }
+
+
+        /* =====================================================
+           CELULAR
+        ====================================================== */
+
+        @media (max-width: 600px) {
+
+            .header-container {
+
+                padding:
+                    18px 15px;
+            }
+
+
+            .logo {
+
+                font-size: 27px;
+
+                text-align: center;
+            }
+
+
+            .logo-subtitle {
+
+                font-size: 8px;
+            }
+
+
+            .main-nav {
+
+                gap: 15px;
+            }
+
+
+            .main-nav a {
+
+                font-size: 11px;
+            }
+
+
+            main {
+
+                padding:
+                    40px 18px 60px;
+            }
+
+
+            .intro {
+
+                margin-bottom: 50px;
+            }
+
+
+            .intro h1 {
+
+                font-size: 43px;
+            }
+
+
+            .intro p {
+
+                font-size: 14px;
+
+                line-height: 1.8;
+            }
+
+
+            .participate {
+
+                padding-top: 35px;
+
+                gap: 35px;
+            }
+
+
+            .participate-info h2 {
+
+                font-size: 31px;
+            }
+
+
+            .contact-form {
+
+                padding:
+                    25px 20px;
+            }
+
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+
+                margin-bottom: 0;
+            }
+
+
+            .form-row .form-group {
+
+                margin-bottom: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="header-container">
+
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            Boletín SD
+
+            <span class="logo-subtitle">
+                Salud Digital · Facultad de Medicina
+            </span>
+
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <a href="boletin.html">
+                Boletín SD
+            </a>
+
+            <a href="repositorio.html">
+                Hemeroteca
+            </a>
+
+            <a
+                href="contacto.html"
+                class="active"
+            >
+                Contacto
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     CONTENIDO
+===================================================== -->
+
+<main>
+
+
+    <!-- INTRODUCCIÓN -->
+
+    <section class="intro">
+
+        <div class="intro-label">
+            Acerca del proyecto
+        </div>
+
+
+        <h1>
+            Conoce acerca de nosotros
+        </h1>
+
+
+        <p>
+            Este espacio nace con la finalidad de
+            <strong>
+                compartir información relevante,
+                novedades tecnológicas, buenas prácticas
+                y recursos
+            </strong>
+            que contribuyan a fortalecer la formación
+            en <strong>Salud Digital</strong> dentro de
+            nuestra comunidad académica.
+        </p>
+
+
+        <p>
+            Un lugar para
+            <strong>
+                aprender, compartir y mantenernos al día
+            </strong>
+            con las herramientas y conocimientos que
+            están transformando la educación y la
+            práctica en salud.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PARTICIPACIÓN
+    ================================================== -->
+
+    <section class="participate">
+
+
+        <!-- INFORMACIÓN -->
+
+        <div class="participate-info">
+
+            <div class="participate-label">
+                Sé parte del boletín
+            </div>
+
+
+            <h2>
+                ¿Quieres reportar
+                una nota?
+            </h2>
+
+
+            <p>
+                Si quieres ser parte de este proyecto,
+                puedes ponerte en contacto con nosotros
+                para proponer una nota, compartir una
+                experiencia o participar en el desarrollo
+                del boletín.
+            </p>
+
+
+            <div class="requirement">
+
+                <strong>
+                    Importante:
+                </strong>
+
+                Para participar debes ser miembro activo
+                de la comunidad de Salud Digital:
+                profesor, ayudante de profesor o
+                instructor.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FORMULARIO
+        ================================================== -->
+
+        <div class="contact-form">
+
+
+            <h2 class="form-title">
+                Envíanos tu propuesta
+            </h2>
+
+
+            <form id="contact-form">
+
+
+                <!-- NOMBRE + PUESTO -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="nombre">
+                            Nombre
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Escribe tu nombre completo"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="puesto">
+                            Puesto
+                        </label>
+
+                        <select
+                            id="puesto"
+                            name="puesto"
+                            required
+                        >
+
+                            <option value="">
+                                Selecciona una opción
+                            </option>
+
+                            <option value="Profesor">
+                                Profesor
+                            </option>
+
+                            <option value="Ayudante de profesor">
+                                Ayudante de profesor
+                            </option>
+
+                            <option value="Instructor">
+                                Instructor
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TELÉFONO + CORREO -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="telefono">
+                            Teléfono
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefono"
+                            name="telefono"
+                            placeholder="Número de teléfono"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="correo">
+                            Correo electrónico
+                        </label>
+
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            placeholder="correo@ejemplo.com"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TIPO DE PARTICIPACIÓN -->
+
+                <div class="form-group">
+
+                    <label for="tipo_nota">
+                        ¿Cómo te gustaría participar?
+                    </label>
+
+
+                    <select
+                        id="tipo_nota"
+                        name="tipo_nota"
+                        required
+                    >
+
+                        <option value="">
+                            Selecciona una opción
+                        </option>
+
+                        <option value="Nota personal">
+                            Quiero compartir una nota sobre mí
+                        </option>
+
+                        <option value="Actividad o proyecto">
+                            Quiero compartir una actividad o proyecto
+                        </option>
+
+                        <option value="Colaboración">
+                            Quiero colaborar en el desarrollo del boletín
+                        </option>
+
+                        <option value="Otro">
+                            Otro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- MENSAJE -->
+
+                <div class="form-group">
+
+                    <label for="mensaje">
+                        Cuéntanos más
+                    </label>
+
+
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        placeholder="Cuéntanos brevemente qué te gustaría compartir o cómo te gustaría participar..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- BOTÓN -->
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                    id="submit-button"
+                >
+
+                    Enviar propuesta →
+
+                </button>
+
+
+                <!-- ESTADO -->
+
+                <div
+                    id="form-status"
+                ></div>
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <h3>
+        Boletín SD
+    </h3>
+
+    <p>
+        Boletín de Salud Digital
+    </p>
+
+    <p>
+        Facultad de Medicina
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT / EMAILJS
+===================================================== -->
+
+<script>
+
+    /* =====================================================
+       CONFIGURACIÓN EMAILJS
+    ====================================================== */
+
+    emailjs.init({
+        publicKey: "TU_PUBLIC_KEY"
+    });
+
+
+
+    /* =====================================================
+       FORMULARIO
+    ====================================================== */
+
+    const form =
+        document.getElementById("contact-form");
+
+
+    const button =
+        document.getElementById("submit-button");
+
+
+    const status =
+        document.getElementById("form-status");
+
+
+
+    form.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            button.disabled = true;
+
+            button.textContent =
+                "Enviando...";
+
+
+            status.className = "";
+
+            status.style.display =
+                "none";
+
+
+
+            /* =================================================
+               ENVÍO EMAILJS
+            ================================================= */
+
+            emailjs.sendForm(
+
+                "TU_SERVICE_ID",
+
+                "TU_TEMPLATE_ID",
+
+                form
+
+            )
+
+            .then(
+
+                function() {
+
+
+                    status.className =
+                        "success";
+
+
+                    status.style.display =
+                        "block";
+
+
+                    status.innerHTML =
+                        "✓ Tu propuesta ha sido enviada correctamente. Gracias por querer formar parte del Boletín de Salud Digital.";
+
+
+                    form.reset();
+
+
+                    button.disabled =
+                        false;
+
+
+                    button.textContent =
+                        "Enviar propuesta →";
+
+                },
+
+
+                function(error) {
+
+
+                    console.error(
+                        "Error:",
+                        error
+                    );
+
+
+                    status.className =
+                        "error";
+
+
+                    status.style.display =
+                        "block";
+
+
+                    status.innerHTML =
+                        "No pudimos enviar tu propuesta en este momento. Por favor, inténtalo nuevamente.";
+
+
+                    button.disabled =
+                        false;
+
+
+                    button.textContent =
+                        "Enviar propuesta →";
+
+                }
+
+            );
+
+        }
+
+    );
+
+</script>
+
+
+</body>
+
+</html>
