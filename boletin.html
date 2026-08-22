@@ -10,6 +10,7 @@
 
     <title>Boletín SD | Salud Digital</title>
 
+
     <style>
 
         /* =====================================================
@@ -27,10 +28,18 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             background: #ffffff;
+
             color: #222;
+
             line-height: 1.6;
+
+            overflow-x: hidden;
         }
 
         img {
@@ -49,18 +58,24 @@
 
         header {
             background: #084B7A;
+
             color: white;
 
             position: sticky;
+
             top: 0;
+
             z-index: 1000;
 
             box-shadow:
                 0 4px 18px rgba(0, 0, 0, 0.12);
         }
 
+
         .header-main {
+
             max-width: 1300px;
+
             margin: auto;
 
             min-height: 78px;
@@ -68,13 +83,21 @@
             padding: 0 35px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
             gap: 30px;
         }
 
+
+        /* =====================================================
+           LOGOTIPO
+        ===================================================== */
+
         .logo {
+
             color: white;
 
             font-family:
@@ -89,10 +112,15 @@
             letter-spacing: 0.5px;
         }
 
+
         .logo span {
-            font-family: Arial, Helvetica, sans-serif;
 
             display: block;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
             font-size: 10px;
 
@@ -107,17 +135,21 @@
 
 
         /* =====================================================
-           NAVEGACIÓN
+           NAVEGACIÓN PRINCIPAL
         ===================================================== */
 
         nav {
+
             display: flex;
+
             align-items: center;
 
             gap: 27px;
         }
 
+
         nav a {
+
             color: white;
 
             font-size: 13px;
@@ -131,17 +163,23 @@
             padding: 30px 0;
         }
 
+
         nav a:hover {
+
             opacity: 0.75;
         }
 
+
         nav a.activo::after {
+
             content: "";
 
             position: absolute;
 
             left: 0;
+
             right: 0;
+
             bottom: 21px;
 
             height: 2px;
@@ -155,7 +193,9 @@
         ===================================================== */
 
         .section-nav {
-            border-bottom: 1px solid #dfe4e8;
+
+            border-bottom:
+                1px solid #dfe4e8;
 
             background: white;
 
@@ -166,7 +206,9 @@
             z-index: 900;
         }
 
+
         .section-nav-inner {
+
             max-width: 1300px;
 
             margin: auto;
@@ -182,9 +224,18 @@
             gap: 30px;
 
             overflow-x: auto;
+
+            scrollbar-width: none;
         }
 
+
+        .section-nav-inner::-webkit-scrollbar {
+            display: none;
+        }
+
+
         .section-nav a {
+
             color: #444;
 
             font-size: 11px;
@@ -199,24 +250,31 @@
 
             padding: 16px 0;
 
-            transition: color 0.3s ease;
+            transition:
+                color 0.3s ease;
         }
 
+
         .section-nav a:hover {
+
             color: #084B7A;
         }
 
 
         /* =====================================================
-           CONTENEDOR
+           CONTENEDOR PRINCIPAL
         ===================================================== */
 
         main {
+
+            width: 100%;
+
             max-width: 1300px;
 
             margin: auto;
 
-            padding: 45px 35px 90px;
+            padding:
+                45px 35px 90px;
         }
 
 
@@ -225,6 +283,9 @@
         ===================================================== */
 
         .edition-header {
+
+            width: 100%;
+
             display: flex;
 
             align-items: flex-end;
@@ -235,12 +296,15 @@
 
             padding-bottom: 22px;
 
-            border-bottom: 3px solid #084B7A;
+            border-bottom:
+                3px solid #084B7A;
 
-            margin-bottom: 28px;
+            margin-bottom: 30px;
         }
 
+
         .edition-label {
+
             color: #084B7A;
 
             font-size: 12px;
@@ -251,17 +315,19 @@
 
             text-transform: uppercase;
 
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
+
         .edition-header h1 {
+
             font-family:
                 Georgia,
                 "Times New Roman",
                 serif;
 
             font-size:
-                clamp(34px, 5vw, 58px);
+                clamp(36px, 5vw, 58px);
 
             font-weight: normal;
 
@@ -270,7 +336,9 @@
             color: #222;
         }
 
+
         .edition-date {
+
             color: #777;
 
             font-size: 13px;
@@ -280,10 +348,13 @@
 
 
         /* =====================================================
-           PORTADA / NOTICIA PRINCIPAL
+           NOTICIA PRINCIPAL
         ===================================================== */
 
         .hero {
+
+            width: 100%;
+
             display: grid;
 
             grid-template-columns:
@@ -294,10 +365,17 @@
 
             padding-bottom: 45px;
 
-            border-bottom: 1px solid #dfe3e6;
+            border-bottom:
+                1px solid #dfe3e6;
         }
 
+
         .hero-image {
+
+            display: block;
+
+            width: 100%;
+
             position: relative;
 
             overflow: hidden;
@@ -307,8 +385,13 @@
             background: #e9edf0;
         }
 
+
         .hero-image img {
+
+            display: block;
+
             width: 100%;
+
             height: 100%;
 
             object-fit: cover;
@@ -317,21 +400,72 @@
                 transform 0.5s ease;
         }
 
-        .hero:hover .hero-image img {
+
+        .hero-image:hover img {
+
             transform: scale(1.025);
         }
 
+
+        /* =====================================================
+           PLACEHOLDER PARA IMÁGENES
+        ===================================================== */
+
+        .image-placeholder {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf2f5,
+                    #dfe7ec
+                );
+
+            color: #084B7A;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 22px;
+        }
+
+
+        /* =====================================================
+           CONTENIDO DE NOTICIA PRINCIPAL
+        ===================================================== */
+
         .hero-content {
+
             display: flex;
 
             flex-direction: column;
 
             justify-content: center;
 
-            padding: 10px 10px 10px 5px;
+            min-width: 0;
+
+            padding:
+                10px 10px 10px 5px;
         }
 
+
         .category {
+
             color: #084B7A;
 
             font-size: 11px;
@@ -342,10 +476,12 @@
 
             text-transform: uppercase;
 
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
+
         .hero-content h2 {
+
             font-family:
                 Georgia,
                 "Times New Roman",
@@ -363,25 +499,35 @@
             margin-bottom: 18px;
         }
 
+
         .hero-content p {
+
             color: #5f6367;
 
             font-size: 16px;
 
             line-height: 1.8;
 
-            margin-bottom: 22px;
+            margin-bottom: 18px;
         }
 
+
         .article-meta {
+
             color: #999;
 
             font-size: 12px;
 
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
+
+        /* =====================================================
+           ENLACES "LEER MÁS"
+        ===================================================== */
+
         .read-more {
+
             color: #084B7A;
 
             font-size: 12px;
@@ -399,9 +545,13 @@
             gap: 8px;
 
             width: fit-content;
+
+            margin-top: auto;
         }
 
+
         .read-more:hover {
+
             color: #063653;
         }
 
@@ -411,22 +561,39 @@
         ===================================================== */
 
         .section {
-            padding-top: 55px;
+
+            position: relative;
+
+            width: 100%;
+
+            clear: both;
+
+            padding-top: 60px;
 
             margin-top: 20px;
         }
 
+
+        /* =====================================================
+           ENCABEZADO DE SECCIÓN
+        ===================================================== */
+
         .section-heading {
+
+            width: 100%;
+
             display: flex;
 
             align-items: center;
 
             gap: 18px;
 
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
+
         .section-heading::after {
+
             content: "";
 
             height: 1px;
@@ -434,9 +601,13 @@
             background: #d9dee2;
 
             flex: 1;
+
+            min-width: 20px;
         }
 
+
         .section-heading h2 {
+
             color: #084B7A;
 
             font-family:
@@ -444,7 +615,7 @@
                 "Times New Roman",
                 serif;
 
-            font-size: 28px;
+            font-size: 30px;
 
             font-weight: normal;
 
@@ -457,32 +628,71 @@
         ===================================================== */
 
         .news-grid {
+
+            width: 100%;
+
             display: grid;
 
             grid-template-columns:
-                repeat(3, 1fr);
+                repeat(3, minmax(0, 1fr));
 
-            gap: 28px;
+            gap: 30px;
+
+            align-items: stretch;
         }
 
+
+        /* =====================================================
+           TARJETA
+        ===================================================== */
+
         .news-card {
-            border-bottom: 1px solid #dfe3e6;
+
+            width: 100%;
+
+            min-width: 0;
+
+            position: relative;
+
+            display: flex;
+
+            flex-direction: column;
+
+            border-bottom:
+                1px solid #dfe3e6;
 
             padding-bottom: 25px;
         }
 
+
+        /* =====================================================
+           IMAGEN DE TARJETA
+        ===================================================== */
+
         .news-image {
+
+            display: block;
+
+            width: 100%;
+
             aspect-ratio: 16 / 10;
 
             background: #edf0f2;
 
             overflow: hidden;
 
+            position: relative;
+
             margin-bottom: 17px;
         }
 
+
         .news-image img {
+
+            display: block;
+
             width: 100%;
+
             height: 100%;
 
             object-fit: cover;
@@ -491,15 +701,26 @@
                 transform 0.45s ease;
         }
 
-        .news-card:hover .news-image img {
+
+        .news-card:hover
+        .news-image img {
+
             transform: scale(1.04);
         }
 
+
+        /* =====================================================
+           CONTENIDO DE TARJETA
+        ===================================================== */
+
         .news-card .category {
+
             margin-bottom: 8px;
         }
 
+
         .news-card h3 {
+
             font-family:
                 Georgia,
                 "Times New Roman",
@@ -516,7 +737,9 @@
             margin-bottom: 10px;
         }
 
+
         .news-card p {
+
             color: #666;
 
             font-size: 14px;
@@ -528,31 +751,52 @@
 
 
         /* =====================================================
-           SECCIÓN DESTACADA
+           INNOVACIÓN DESTACADA
         ===================================================== */
 
         .featured-section {
+
+            position: relative;
+
+            width: 100%;
+
+            clear: both;
+
+            overflow: hidden;
+
             background: #f4f7f9;
 
-            margin-top: 60px;
+            margin-top: 65px;
 
             padding: 45px;
 
-            border-top: 4px solid #084B7A;
+            border-top:
+                4px solid #084B7A;
         }
 
+
         .featured-content {
+
+            width: 100%;
+
             display: grid;
 
             grid-template-columns:
-                1.1fr 1fr;
+                minmax(0, 1.1fr)
+                minmax(0, 1fr);
 
             gap: 45px;
 
             align-items: center;
         }
 
+
         .featured-image {
+
+            display: block;
+
+            width: 100%;
+
             aspect-ratio: 16 / 10;
 
             overflow: hidden;
@@ -560,20 +804,34 @@
             background: #dfe5e9;
         }
 
+
         .featured-image img {
+
+            display: block;
+
             width: 100%;
+
             height: 100%;
 
             object-fit: cover;
         }
 
+
+        .featured-text {
+
+            min-width: 0;
+        }
+
+
         .featured-text h2 {
+
             font-family:
                 Georgia,
                 "Times New Roman",
                 serif;
 
-            font-size: 38px;
+            font-size:
+                clamp(30px, 3.5vw, 43px);
 
             line-height: 1.15;
 
@@ -582,7 +840,9 @@
             margin-bottom: 17px;
         }
 
+
         .featured-text p {
+
             color: #60666b;
 
             font-size: 15px;
@@ -594,25 +854,43 @@
 
 
         /* =====================================================
-           CUATRO NOTICIAS
+           GRID DE CUATRO NOTICIAS
         ===================================================== */
 
         .four-grid {
+
+            width: 100%;
+
             display: grid;
 
             grid-template-columns:
-                repeat(4, 1fr);
+                repeat(4, minmax(0, 1fr));
 
             gap: 25px;
+
+            align-items: stretch;
         }
+
 
         .small-news {
-            border-top: 2px solid #084B7A;
+
+            min-width: 0;
+
+            position: relative;
+
+            border-top:
+                2px solid #084B7A;
 
             padding-top: 15px;
+
+            display: flex;
+
+            flex-direction: column;
         }
 
+
         .small-news h3 {
+
             font-family:
                 Georgia,
                 "Times New Roman",
@@ -627,27 +905,37 @@
             margin: 8px 0;
         }
 
+
         .small-news p {
+
             color: #777;
 
             font-size: 13px;
 
             line-height: 1.6;
+
+            margin-bottom: 15px;
         }
 
 
         /* =====================================================
-           DESCARGAR EDICIÓN
+           DESCARGA DE PDF
         ===================================================== */
 
         .download-section {
-            margin-top: 70px;
 
-            padding: 40px;
+            width: 100%;
 
-            border-top: 1px solid #d8dde1;
+            margin-top: 75px;
 
-            border-bottom: 1px solid #d8dde1;
+            padding:
+                40px 0;
+
+            border-top:
+                1px solid #d8dde1;
+
+            border-bottom:
+                1px solid #d8dde1;
 
             display: flex;
 
@@ -658,7 +946,9 @@
             gap: 30px;
         }
 
+
         .download-text small {
+
             color: #084B7A;
 
             font-size: 11px;
@@ -670,7 +960,9 @@
             text-transform: uppercase;
         }
 
+
         .download-text h2 {
+
             font-family:
                 Georgia,
                 "Times New Roman",
@@ -683,7 +975,9 @@
             margin-top: 7px;
         }
 
+
         .download-text p {
+
             color: #777;
 
             font-size: 13px;
@@ -691,12 +985,15 @@
             margin-top: 5px;
         }
 
+
         .download-button {
+
             background: #084B7A;
 
             color: white;
 
-            padding: 15px 25px;
+            padding:
+                15px 25px;
 
             font-size: 12px;
 
@@ -706,10 +1003,13 @@
 
             white-space: nowrap;
 
-            transition: all 0.3s ease;
+            transition:
+                all 0.3s ease;
         }
 
+
         .download-button:hover {
+
             background: #063653;
 
             transform: translateY(-2px);
@@ -721,12 +1021,16 @@
         ===================================================== */
 
         .archive-section {
+
             text-align: center;
 
-            padding: 65px 20px 20px;
+            padding:
+                65px 20px 20px;
         }
 
+
         .archive-label {
+
             color: #084B7A;
 
             font-size: 11px;
@@ -740,7 +1044,9 @@
             margin-bottom: 10px;
         }
 
+
         .archive-section h2 {
+
             font-family:
                 Georgia,
                 "Times New Roman",
@@ -753,26 +1059,31 @@
             margin-bottom: 12px;
         }
 
+
         .archive-section p {
+
             color: #777;
 
             max-width: 600px;
 
-            margin: auto;
+            margin:
+                0 auto 25px;
 
             font-size: 14px;
-
-            margin-bottom: 25px;
         }
 
+
         .archive-button {
+
             display: inline-block;
 
-            border: 1px solid #084B7A;
+            border:
+                1px solid #084B7A;
 
             color: #084B7A;
 
-            padding: 12px 22px;
+            padding:
+                12px 22px;
 
             font-size: 12px;
 
@@ -782,10 +1093,13 @@
 
             text-transform: uppercase;
 
-            transition: all 0.3s ease;
+            transition:
+                all 0.3s ease;
         }
 
+
         .archive-button:hover {
+
             background: #084B7A;
 
             color: white;
@@ -797,18 +1111,22 @@
         ===================================================== */
 
         footer {
+
             background: #063653;
 
             color: white;
 
-            padding: 40px 30px;
+            padding:
+                40px 30px;
 
             text-align: center;
 
             margin-top: 60px;
         }
 
+
         footer .footer-title {
+
             font-family:
                 Georgia,
                 "Times New Roman",
@@ -819,7 +1137,9 @@
             margin-bottom: 7px;
         }
 
+
         footer p {
+
             font-size: 12px;
 
             opacity: 0.75;
@@ -829,20 +1149,24 @@
 
 
         /* =====================================================
-           RESPONSIVE
+           TABLET
         ===================================================== */
 
         @media (max-width: 950px) {
 
             .header-main {
-                padding: 18px 22px;
+
+                padding:
+                    18px 22px;
 
                 flex-direction: column;
 
-                gap: 10px;
+                gap: 12px;
             }
 
+
             nav {
+
                 flex-wrap: wrap;
 
                 justify-content: center;
@@ -850,58 +1174,148 @@
                 gap: 18px;
             }
 
+
             nav a {
+
                 padding: 5px 0;
             }
 
+
             nav a.activo::after {
+
                 bottom: -4px;
             }
 
+
             .section-nav {
+
                 top: 130px;
             }
 
+
             .section-nav-inner {
-                padding: 0 22px;
+
+                padding:
+                    0 22px;
             }
+
 
             main {
-                padding: 35px 22px 70px;
+
+                padding:
+                    35px 22px 70px;
             }
+
 
             .hero {
+
                 grid-template-columns: 1fr;
+
             }
+
+
+            .hero-content {
+
+                padding:
+                    20px 0 0;
+            }
+
 
             .news-grid {
+
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    repeat(2, minmax(0, 1fr));
             }
+
 
             .four-grid {
+
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    repeat(2, minmax(0, 1fr));
             }
 
+
             .featured-content {
+
                 grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+
+            .featured-text {
+
+                padding:
+                    0 5px 10px;
             }
 
         }
 
 
+        /* =====================================================
+           CELULAR
+        ===================================================== */
+
         @media (max-width: 600px) {
 
-            .logo {
-                font-size: 27px;
+            .header-main {
+
+                min-height: auto;
             }
 
+
+            .logo {
+
+                font-size: 27px;
+
+                text-align: center;
+            }
+
+
+            .logo span {
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+            }
+
+
+            nav {
+
+                gap: 14px;
+            }
+
+
+            nav a {
+
+                font-size: 11px;
+            }
+
+
             .section-nav {
+
                 top: 150px;
             }
 
+
+            .section-nav-inner {
+
+                gap: 22px;
+
+                padding:
+                    0 18px;
+            }
+
+
+            main {
+
+                padding:
+                    30px 18px 60px;
+            }
+
+
             .edition-header {
+
                 flex-direction: column;
 
                 align-items: flex-start;
@@ -909,46 +1323,125 @@
                 gap: 12px;
             }
 
+
             .edition-header h1 {
+
                 font-size: 40px;
             }
 
-            .hero-content {
-                padding: 15px 0;
+
+            .edition-date {
+
+                white-space: normal;
             }
 
+
             .hero-content h2 {
+
                 font-size: 34px;
             }
 
-            .news-grid {
-                grid-template-columns: 1fr;
+
+            .hero-content p {
+
+                font-size: 14px;
+
+                line-height: 1.7;
             }
+
+
+            .section {
+
+                padding-top: 50px;
+
+                margin-top: 10px;
+            }
+
+
+            .section-heading h2 {
+
+                font-size: 25px;
+            }
+
+
+            .news-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+
+            .news-card h3 {
+
+                font-size: 24px;
+            }
+
 
             .four-grid {
+
                 grid-template-columns: 1fr;
+
+                gap: 30px;
             }
+
 
             .featured-section {
-                padding: 25px 20px;
+
+                margin-top: 55px;
+
+                padding:
+                    25px 20px;
             }
 
+
+            .featured-content {
+
+                gap: 25px;
+            }
+
+
             .featured-text h2 {
+
                 font-size: 30px;
             }
 
+
+            .featured-text p {
+
+                font-size: 14px;
+            }
+
+
             .download-section {
+
                 flex-direction: column;
 
                 align-items: flex-start;
 
-                padding: 30px 0;
+                padding:
+                    30px 0;
             }
 
+
             .download-button {
+
                 width: 100%;
 
                 text-align: center;
+            }
+
+
+            .archive-section {
+
+                padding:
+                    55px 10px 10px;
+            }
+
+
+            .archive-section h2 {
+
+                font-size: 30px;
             }
 
         }
@@ -962,14 +1455,18 @@
 
 
 <!-- =====================================================
-     ENCABEZADO
+     HEADER
 ===================================================== -->
 
 <header>
 
     <div class="header-main">
 
-        <a href="index.html" class="logo">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
 
             Boletín SD
 
@@ -986,8 +1483,10 @@
                 Inicio
             </a>
 
-            <a href="boletin.html"
-               class="activo">
+            <a
+                href="boletin.html"
+                class="activo"
+            >
                 Boletín SD
             </a>
 
@@ -1006,8 +1505,9 @@
 </header>
 
 
+
 <!-- =====================================================
-     NAVEGACIÓN DE SECCIONES
+     MENÚ DE SECCIONES
 ===================================================== -->
 
 <div class="section-nav">
@@ -1043,8 +1543,9 @@
 </div>
 
 
+
 <!-- =====================================================
-     CONTENIDO
+     CONTENIDO PRINCIPAL
 ===================================================== -->
 
 <main>
@@ -1068,6 +1569,7 @@
 
         </div>
 
+
         <div class="edition-date">
             Publicado · 22 agosto 2026
         </div>
@@ -1082,15 +1584,28 @@
 
     <section class="hero">
 
-        <a href="#"
-           class="hero-image">
 
-            <img
-                src="imagenes/noticia-principal.jpg"
-                alt="Imagen de la noticia principal"
-            >
+        <a
+            href="#"
+            class="hero-image"
+        >
+
+            <!--
+                CUANDO TENGAS LA IMAGEN,
+                PUEDES USAR:
+
+                <img
+                    src="imagenes/noticia-principal.jpg"
+                    alt="Noticia principal"
+                >
+            -->
+
+            <div class="image-placeholder">
+                Noticia principal
+            </div>
 
         </a>
+
 
 
         <article class="hero-content">
@@ -1099,10 +1614,12 @@
                 Innovación
             </div>
 
+
             <h2>
                 La tecnología que está transformando
                 la atención en salud
             </h2>
+
 
             <p>
                 Conoce las nuevas herramientas digitales,
@@ -1112,11 +1629,16 @@
                 la salud.
             </p>
 
+
             <div class="article-meta">
                 22 de agosto de 2026 · Salud Digital
             </div>
 
-            <a href="#" class="read-more">
+
+            <a
+                href="#"
+                class="read-more"
+            >
                 Leer artículo →
             </a>
 
@@ -1135,6 +1657,7 @@
         id="ciencia"
     >
 
+
         <div class="section-heading">
 
             <h2>
@@ -1144,37 +1667,50 @@
         </div>
 
 
+
         <div class="news-grid">
 
 
+            <!-- NOTICIA 1 -->
+
             <article class="news-card">
 
-                <a href="#" class="news-image">
 
-                    <img
-                        src="imagenes/ciencia-01.jpg"
-                        alt="Ciencia y salud"
-                    >
+                <a
+                    href="#"
+                    class="news-image"
+                >
+
+                    <div class="image-placeholder">
+                        Ciencia
+                    </div>
 
                 </a>
+
 
                 <div class="category">
                     Ciencia
                 </div>
+
 
                 <h3>
                     Nuevas perspectivas para la
                     investigación en salud
                 </h3>
 
+
                 <p>
                     Una mirada a los avances y
-                    descubrimientos que están
-                    generando nuevas oportunidades
-                    para la práctica médica.
+                    descubrimientos que están generando
+                    nuevas oportunidades para la
+                    práctica médica.
                 </p>
 
-                <a href="#" class="read-more">
+
+                <a
+                    href="#"
+                    class="read-more"
+                >
                     Leer más →
                 </a>
 
@@ -1182,25 +1718,33 @@
 
 
 
+            <!-- NOTICIA 2 -->
+
             <article class="news-card">
 
-                <a href="#" class="news-image">
 
-                    <img
-                        src="imagenes/ciencia-02.jpg"
-                        alt="Investigación en salud"
-                    >
+                <a
+                    href="#"
+                    class="news-image"
+                >
+
+                    <div class="image-placeholder">
+                        Investigación
+                    </div>
 
                 </a>
+
 
                 <div class="category">
                     Investigación
                 </div>
 
+
                 <h3>
                     Datos que ayudan a comprender
                     mejor la salud
                 </h3>
+
 
                 <p>
                     La información y el análisis de
@@ -1209,7 +1753,11 @@
                     decisiones.
                 </p>
 
-                <a href="#" class="read-more">
+
+                <a
+                    href="#"
+                    class="read-more"
+                >
                     Leer más →
                 </a>
 
@@ -1217,25 +1765,33 @@
 
 
 
+            <!-- NOTICIA 3 -->
+
             <article class="news-card">
 
-                <a href="#" class="news-image">
 
-                    <img
-                        src="imagenes/ciencia-03.jpg"
-                        alt="Salud digital"
-                    >
+                <a
+                    href="#"
+                    class="news-image"
+                >
+
+                    <div class="image-placeholder">
+                        Salud Digital
+                    </div>
 
                 </a>
+
 
                 <div class="category">
                     Salud digital
                 </div>
 
+
                 <h3>
                     Innovación para mejorar la
                     experiencia del paciente
                 </h3>
+
 
                 <p>
                     Las soluciones digitales ofrecen
@@ -1244,7 +1800,11 @@
                     personas.
                 </p>
 
-                <a href="#" class="read-more">
+
+                <a
+                    href="#"
+                    class="read-more"
+                >
                     Leer más →
                 </a>
 
@@ -1266,6 +1826,7 @@
         id="tecnologia"
     >
 
+
         <div class="section-heading">
 
             <h2>
@@ -1275,28 +1836,37 @@
         </div>
 
 
+
         <div class="news-grid">
 
 
+            <!-- TECNOLOGÍA -->
+
             <article class="news-card">
 
-                <a href="#" class="news-image">
 
-                    <img
-                        src="imagenes/tecnologia-01.jpg"
-                        alt="Tecnología en salud"
-                    >
+                <a
+                    href="#"
+                    class="news-image"
+                >
+
+                    <div class="image-placeholder">
+                        Tecnología
+                    </div>
 
                 </a>
+
 
                 <div class="category">
                     Tecnología
                 </div>
 
+
                 <h3>
-                    Herramientas digitales
-                    para la práctica médica
+                    Herramientas digitales para la
+                    práctica médica
                 </h3>
+
 
                 <p>
                     Tecnologías que permiten mejorar
@@ -1304,7 +1874,11 @@
                     información y apoyar la atención.
                 </p>
 
-                <a href="#" class="read-more">
+
+                <a
+                    href="#"
+                    class="read-more"
+                >
                     Leer más →
                 </a>
 
@@ -1312,25 +1886,33 @@
 
 
 
+            <!-- IA -->
+
             <article class="news-card">
 
-                <a href="#" class="news-image">
 
-                    <img
-                        src="imagenes/tecnologia-02.jpg"
-                        alt="Inteligencia artificial"
-                    >
+                <a
+                    href="#"
+                    class="news-image"
+                >
+
+                    <div class="image-placeholder">
+                        Inteligencia artificial
+                    </div>
 
                 </a>
+
 
                 <div class="category">
                     Inteligencia artificial
                 </div>
 
+
                 <h3>
                     Inteligencia artificial:
                     oportunidades y retos
                 </h3>
+
 
                 <p>
                     Una aproximación al papel que
@@ -1338,7 +1920,11 @@
                     inteligencia artificial en salud.
                 </p>
 
-                <a href="#" class="read-more">
+
+                <a
+                    href="#"
+                    class="read-more"
+                >
                     Leer más →
                 </a>
 
@@ -1346,25 +1932,33 @@
 
 
 
+            <!-- TELEMEDICINA -->
+
             <article class="news-card">
 
-                <a href="#" class="news-image">
 
-                    <img
-                        src="imagenes/tecnologia-03.jpg"
-                        alt="Telemedicina"
-                    >
+                <a
+                    href="#"
+                    class="news-image"
+                >
+
+                    <div class="image-placeholder">
+                        Telemedicina
+                    </div>
 
                 </a>
+
 
                 <div class="category">
                     Telemedicina
                 </div>
 
+
                 <h3>
-                    Nuevas posibilidades para
-                    la atención a distancia
+                    Nuevas posibilidades para la
+                    atención a distancia
                 </h3>
+
 
                 <p>
                     La telemedicina continúa ampliando
@@ -1372,7 +1966,11 @@
                     acompañamiento de los pacientes.
                 </p>
 
-                <a href="#" class="read-more">
+
+                <a
+                    href="#"
+                    class="read-more"
+                >
                     Leer más →
                 </a>
 
@@ -1386,7 +1984,7 @@
 
 
     <!-- =================================================
-         INNOVACIÓN DESTACADA
+         INNOVACIÓN
     ================================================== -->
 
     <section
@@ -1394,29 +1992,36 @@
         id="innovacion"
     >
 
+
         <div class="featured-content">
 
 
-            <a href="#" class="featured-image">
+            <a
+                href="#"
+                class="featured-image"
+            >
 
-                <img
-                    src="imagenes/innovacion-destacada.jpg"
-                    alt="Innovación en salud"
-                >
+                <div class="image-placeholder">
+                    Innovación en salud
+                </div>
 
             </a>
 
 
+
             <article class="featured-text">
+
 
                 <div class="category">
                     Innovación
                 </div>
 
+
                 <h2>
                     Ideas que pueden convertirse
                     en soluciones para la salud
                 </h2>
+
 
                 <p>
                     Conoce proyectos, iniciativas y
@@ -1426,11 +2031,16 @@
                     de la atención y educación en salud.
                 </p>
 
-                <a href="#" class="read-more">
+
+                <a
+                    href="#"
+                    class="read-more"
+                >
                     Conocer proyecto →
                 </a>
 
             </article>
+
 
         </div>
 
@@ -1447,6 +2057,7 @@
         id="educacion"
     >
 
+
         <div class="section-heading">
 
             <h2>
@@ -1454,6 +2065,7 @@
             </h2>
 
         </div>
+
 
 
         <div class="four-grid">
@@ -1475,6 +2087,13 @@
                     y formativas de este mes.
                 </p>
 
+                <a
+                    href="#"
+                    class="read-more"
+                >
+                    Leer más →
+                </a>
+
             </article>
 
 
@@ -1494,6 +2113,13 @@
                     Recursos y experiencias para
                     fortalecer la formación.
                 </p>
+
+                <a
+                    href="#"
+                    class="read-more"
+                >
+                    Leer más →
+                </a>
 
             </article>
 
@@ -1515,6 +2141,13 @@
                     enriquecer los procesos educativos.
                 </p>
 
+                <a
+                    href="#"
+                    class="read-more"
+                >
+                    Leer más →
+                </a>
+
             </article>
 
 
@@ -1534,6 +2167,13 @@
                     talleres y encuentros.
                 </p>
 
+                <a
+                    href="#"
+                    class="read-more"
+                >
+                    Leer más →
+                </a>
+
             </article>
 
 
@@ -1552,6 +2192,7 @@
         id="comunidad"
     >
 
+
         <div class="section-heading">
 
             <h2>
@@ -1561,27 +2202,34 @@
         </div>
 
 
+
         <div class="news-grid">
 
 
             <article class="news-card">
 
-                <a href="#" class="news-image">
 
-                    <img
-                        src="imagenes/comunidad-01.jpg"
-                        alt="Comunidad"
-                    >
+                <a
+                    href="#"
+                    class="news-image"
+                >
+
+                    <div class="image-placeholder">
+                        Comunidad
+                    </div>
 
                 </a>
+
 
                 <div class="category">
                     Comunidad
                 </div>
 
+
                 <h3>
                     Lo que hacemos juntos
                 </h3>
+
 
                 <p>
                     Historias, actividades y proyectos
@@ -1589,7 +2237,11 @@
                     comunidad.
                 </p>
 
-                <a href="#" class="read-more">
+
+                <a
+                    href="#"
+                    class="read-more"
+                >
                     Leer más →
                 </a>
 
@@ -1599,22 +2251,28 @@
 
             <article class="news-card">
 
-                <a href="#" class="news-image">
 
-                    <img
-                        src="imagenes/comunidad-02.jpg"
-                        alt="Actividades"
-                    >
+                <a
+                    href="#"
+                    class="news-image"
+                >
+
+                    <div class="image-placeholder">
+                        Actividades
+                    </div>
 
                 </a>
+
 
                 <div class="category">
                     Actividades
                 </div>
 
+
                 <h3>
                     Una comunidad que participa
                 </h3>
+
 
                 <p>
                     Conoce las experiencias y
@@ -1622,7 +2280,11 @@
                     parte del proyecto.
                 </p>
 
-                <a href="#" class="read-more">
+
+                <a
+                    href="#"
+                    class="read-more"
+                >
                     Leer más →
                 </a>
 
@@ -1632,30 +2294,41 @@
 
             <article class="news-card">
 
-                <a href="#" class="news-image">
 
-                    <img
-                        src="imagenes/comunidad-03.jpg"
-                        alt="Colaboración"
-                    >
+                <a
+                    href="#"
+                    class="news-image"
+                >
+
+                    <div class="image-placeholder">
+                        Colaboración
+                    </div>
 
                 </a>
+
 
                 <div class="category">
                     Colaboración
                 </div>
+
 
                 <h3>
                     Proyectos que construimos
                     en comunidad
                 </h3>
 
+
                 <p>
-                    Conoce iniciativas y colaboraciones
-                    que generan nuevas oportunidades.
+                    Conoce iniciativas y
+                    colaboraciones que generan
+                    nuevas oportunidades.
                 </p>
 
-                <a href="#" class="read-more">
+
+                <a
+                    href="#"
+                    class="read-more"
+                >
                     Leer más →
                 </a>
 
@@ -1677,6 +2350,7 @@
         id="cultura"
     >
 
+
         <div class="section-heading">
 
             <h2>
@@ -1684,6 +2358,7 @@
             </h2>
 
         </div>
+
 
 
         <div class="four-grid">
@@ -1704,6 +2379,13 @@
                     para explorar nuevas ideas.
                 </p>
 
+                <a
+                    href="#"
+                    class="read-more"
+                >
+                    Leer más →
+                </a>
+
             </article>
 
 
@@ -1722,6 +2404,13 @@
                     Una selección de contenidos
                     relacionados con ciencia y salud.
                 </p>
+
+                <a
+                    href="#"
+                    class="read-more"
+                >
+                    Leer más →
+                </a>
 
             </article>
 
@@ -1743,6 +2432,13 @@
                     comunicar conocimiento.
                 </p>
 
+                <a
+                    href="#"
+                    class="read-more"
+                >
+                    Leer más →
+                </a>
+
             </article>
 
 
@@ -1762,6 +2458,13 @@
                     para este mes.
                 </p>
 
+                <a
+                    href="#"
+                    class="read-more"
+                >
+                    Leer más →
+                </a>
+
             </article>
 
 
@@ -1772,10 +2475,11 @@
 
 
     <!-- =================================================
-         DESCARGA DE EDICIÓN
+         DESCARGA DEL PDF
     ================================================== -->
 
     <section class="download-section">
+
 
         <div class="download-text">
 
@@ -1783,9 +2487,11 @@
                 Edición completa
             </small>
 
+
             <h2>
                 Agosto 2026
             </h2>
+
 
             <p>
                 Consulta o descarga la edición completa
@@ -1795,13 +2501,16 @@
         </div>
 
 
+
         <a
             href="ediciones/boletin-2026-08.pdf"
             class="download-button"
             target="_blank"
+            rel="noopener"
         >
             📄 Leer / descargar PDF
         </a>
+
 
     </section>
 
@@ -1813,19 +2522,23 @@
 
     <section class="archive-section">
 
+
         <div class="archive-label">
             Archivo
         </div>
 
+
         <h2>
             ¿Buscas una edición anterior?
         </h2>
+
 
         <p>
             Explora nuestra hemeroteca y consulta
             las publicaciones anteriores del Boletín
             de Salud Digital.
         </p>
+
 
         <a
             href="repositorio.html"
@@ -1834,10 +2547,12 @@
             Explorar Hemeroteca →
         </a>
 
+
     </section>
 
 
 </main>
+
 
 
 <!-- =====================================================
@@ -1846,17 +2561,21 @@
 
 <footer>
 
+
     <div class="footer-title">
         Boletín SD
     </div>
+
 
     <p>
         Boletín de Salud Digital
     </p>
 
+
     <p>
         Facultad de Medicina
     </p>
+
 
 </footer>
 
