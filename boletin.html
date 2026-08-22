@@ -1,17 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="es">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Boletín SD | Salud Digital</title>
-
-
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Boletín SD | Salud Digital</title>
+<style>
 
         /* =====================================================
            CONFIGURACIÓN GENERAL
@@ -1454,151 +1448,246 @@
 
         }
 
-    </style>
+    
+        /* =====================================================
+           ARTÍCULOS DESPLEGABLES
+        ===================================================== */
 
+        .article-details {
+            display: none;
+            margin-top: 18px;
+            padding: 22px 0 4px;
+            border-top: 1px solid #dfe3e6;
+            color: #555;
+            animation: articleOpen 0.35s ease;
+        }
+
+        .article-details.visible {
+            display: block;
+        }
+
+        .article-details h4 {
+            color: #084B7A;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+            font-weight: normal;
+            margin: 0 0 12px;
+        }
+
+        .article-details p {
+            color: #5f6367;
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0 0 13px;
+        }
+
+        .article-details ul {
+            margin: 0 0 14px 20px;
+            color: #5f6367;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .article-details li {
+            margin-bottom: 5px;
+        }
+
+        .read-more {
+            cursor: pointer;
+            border: 0;
+            background: transparent;
+            font-family: inherit;
+        }
+
+        .read-more .close-label {
+            display: none;
+        }
+
+        .read-more.expanded .open-label {
+            display: none;
+        }
+
+        .read-more.expanded .close-label {
+            display: inline;
+        }
+
+        .article-card-expanded {
+            border-bottom-color: #084B7A;
+        }
+
+        @keyframes articleOpen {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Evita que el encabezado quede oculto por las barras sticky */
+        .section,
+        .featured-section,
+        .article-details {
+            scroll-margin-top: 145px;
+        }
+
+        @media (max-width: 950px) {
+            .section,
+            .featured-section,
+            .article-details {
+                scroll-margin-top: 190px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .section,
+            .featured-section,
+            .article-details {
+                scroll-margin-top: 210px;
+            }
+
+            .article-details {
+                padding-top: 16px;
+            }
+
+            .article-details h4 {
+                font-size: 19px;
+            }
+
+            .article-details p,
+            .article-details ul {
+                font-size: 14px;
+            }
+        }
+
+.article-details {
+    display: none;
+    margin-top: 18px;
+    padding: 22px 0 5px;
+    border-top: 1px solid #dfe3e6;
+    animation: articleOpen .35s ease;
+}
+.article-details.visible { display: block; }
+.article-details h4 {
+    color: #084B7A;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 1.35;
+    margin: 0 0 14px;
+}
+.article-details p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 0 0 14px;
+}
+.article-details ul {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 8px 0 16px 20px;
+}
+.article-details li { margin-bottom: 6px; }
+.article-toggle {
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-family: inherit;
+}
+.article-toggle .close-label { display:none; }
+.article-toggle.expanded .open-label { display:none; }
+.article-toggle.expanded .close-label { display:inline; }
+@keyframes articleOpen {
+    from { opacity:0; transform:translateY(-6px); }
+    to { opacity:1; transform:translateY(0); }
+}
+</style>
 </head>
-
-
 <body>
-
-
 <!-- =====================================================
      HEADER
 ===================================================== -->
-
 <header>
-
-    <div class="header-main">
-
-
-        <a
-            href="index.html"
-            class="logo"
-        >
+<div class="header-main">
+<a class="logo" href="index.html">
 
             Boletín SD
 
             <span>
                 Salud Digital · Facultad de Medicina
             </span>
-
-        </a>
-
-
-        <nav>
-
-            <a href="index.html">
+</a>
+<nav>
+<a href="index.html">
                 Inicio
             </a>
-
-            <a
-                href="boletin.html"
-                class="activo"
-            >
+<a class="activo" href="boletin.html">
                 Boletín SD
             </a>
-
-            <a href="repositorio.html">
+<a href="repositorio.html">
                 Hemeroteca
             </a>
-
-            <a href="contacto.html">
+<a href="contacto.html">
                 Contacto
             </a>
-
-        </nav>
-
-    </div>
-
+</nav>
+</div>
 </header>
-
-
-
 <!-- =====================================================
      MENÚ DE SECCIONES
 ===================================================== -->
-
 <div class="section-nav">
-
-    <div class="section-nav-inner">
-
-        <a href="#ciencia">
+<div class="section-nav-inner">
+<a href="#ciencia">
             Conociendo a los profesores
         </a>
-
-        <a href="#tecnologia">
+<a href="#tecnologia">
             Conociendo a los instructores
         </a>
-
-        <a href="#innovacion">
+<a href="#innovacion">
             Impacto de la Salud Digital
         </a>
-
-        <a href="#educacion">
+<a href="#educacion">
             Salud digital para Dummies
         </a>
-
-        <a href="#comunidad">
+<a href="#comunidad">
             La Salud Digital más cerca de ti
         </a>
-
-        <a href="#cultura">
+<a href="#cultura">
             Lo nuevo de la Salud Digital
         </a>
-
-    </div>
-
 </div>
-
-
-
+</div>
 <!-- =====================================================
      CONTENIDO PRINCIPAL
 ===================================================== -->
-
 <main>
-
-
-    <!-- =================================================
+<!-- =================================================
          EDICIÓN ACTUAL
     ================================================== -->
-
-    <section class="edition-header">
-
-        <div>
-
-            <div class="edition-label">
+<section class="edition-header">
+<div>
+<div class="edition-label">
                 Edición actual
             </div>
-
-            <h1>
+<h1>
                 Agosto 2026
             </h1>
-
-        </div>
-
-
-        <div class="edition-date">
+</div>
+<div class="edition-date">
             Publicado · 22 agosto 2026
         </div>
-
-    </section>
-
-
-
-    <!-- =================================================
+</section>
+<!-- =================================================
          NOTICIA PRINCIPAL
     ================================================== -->
-
-    <section class="hero">
-
-
-        <a
-            href="#"
-            class="hero-image"
-        >
-
-            <!--
+<section class="hero">
+<a class="hero-image" href="#">
+<!--
                 CUANDO TENGAS LA IMAGEN,
                 PUEDES USAR:
 
@@ -1607,987 +1696,518 @@
                     alt="Noticia principal"
                 >
             -->
-
-            <div class="image-placeholder">
+<div class="image-placeholder">
                 Noticia principal
             </div>
-
-        </a>
-
-
-
-        <article class="hero-content">
-
-            <div class="category">
+</a>
+<article class="hero-content">
+<div class="category">
                 Innovación
             </div>
-
-
-            <h2>
+<h2>
                 La tecnología que está transformando
                 la atención en salud
             </h2>
-
-
-            <p>
+<p>
                 Conoce las nuevas herramientas digitales,
                 proyectos y propuestas de innovación que
                 están modificando la manera en que
                 aprendemos, atendemos y comprendemos
                 la salud.
             </p>
-
-
-            <div class="article-meta">
+<div class="article-meta">
                 22 de agosto de 2026 · Salud Digital
             </div>
-
-
-            <a
-                href="#"
-                class="read-more"
-            >
+<a class="read-more" href="#">
                 Leer artículo →
             </a>
-
-        </article>
-
-    </section>
-
-
-
-    <!-- =================================================
+</article>
+</section>
+<!-- =================================================
          Conociendo a los profesores
     ================================================== -->
-
-    <section
-        class="section"
-        id="ciencia"
-    >
-
-
-        <div class="section-heading">
-
-            <h2>
+<section class="section" id="ciencia">
+<div class="section-heading">
+<h2>
                 Conociendo a los profesores
             </h2>
-
-        </div>
-
-
-
-        <div class="news-grid">
-
-
-            <!-- NOTICIA 1 -->
-
-            <article class="news-card">
-
-
-                <a
-                    href="#"
-                    class="news-image"
-                >
-
-                    <div class="image-placeholder">
+</div>
+<div class="news-grid">
+<!-- NOTICIA 1 -->
+<article class="news-card">
+<a class="news-image" href="#">
+<div class="image-placeholder">
                         Ciencia
                     </div>
-
-                </a>
-
-
-                <div class="category">
+</a>
+<div class="category">
                     Ciencia
                 </div>
-
-
-                <h3>
+<h3>
                     Nuevas perspectivas para la
                     investigación en salud
                 </h3>
-
-
-                <p>
+<p>
                     Una mirada a los avances y
                     descubrimientos que están generando
                     nuevas oportunidades para la
                     práctica médica.
                 </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
+<a class="read-more" href="#">
                     Leer más →
                 </a>
-
-            </article>
-
-
-
-            <!-- NOTICIA 2 -->
-
-            <article class="news-card">
-
-
-                <a
-                    href="#"
-                    class="news-image"
-                >
-
-                    <div class="image-placeholder">
+</article>
+<!-- NOTICIA 2 -->
+<article class="news-card">
+<a class="news-image" href="#">
+<div class="image-placeholder">
                         Investigación
                     </div>
-
-                </a>
-
-
-                <div class="category">
+</a>
+<div class="category">
                     Investigación
                 </div>
-
-
-                <h3>
+<h3>
                     Datos que ayudan a comprender
                     mejor la salud
                 </h3>
-
-
-                <p>
+<p>
                     La información y el análisis de
                     datos se convierten en herramientas
                     fundamentales para la toma de
                     decisiones.
                 </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
+<a class="read-more" href="#">
                     Leer más →
                 </a>
-
-            </article>
-
-
-
-            <!-- NOTICIA 3 -->
-
-            <article class="news-card">
-
-
-                <a
-                    href="#"
-                    class="news-image"
-                >
-
-                    <div class="image-placeholder">
+</article>
+<!-- NOTICIA 3 -->
+<article class="news-card">
+<a class="news-image" href="#">
+<div class="image-placeholder">
                         Salud Digital
                     </div>
-
-                </a>
-
-
-                <div class="category">
+</a>
+<div class="category">
                     Salud digital
                 </div>
-
-
-                <h3>
+<h3>
                     Innovación para mejorar la
                     experiencia del paciente
                 </h3>
-
-
-                <p>
+<p>
                     Las soluciones digitales ofrecen
                     nuevas posibilidades para acercar
                     los servicios de salud a las
                     personas.
                 </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
+<a class="read-more" href="#">
                     Leer más →
                 </a>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
+</article>
+</div>
+</section>
+<!-- =================================================
          Conociendo a los instructores
     ================================================== -->
-
-    <section
-        class="section"
-        id="tecnologia"
-    >
-
-
-        <div class="section-heading">
-
-            <h2>
+<section class="section" id="tecnologia">
+<div class="section-heading">
+<h2>
                 Conociendo a los instructores
             </h2>
-
-        </div>
-
-
-
-        <div class="news-grid">
-
-
-            <!-- Conociendo a los instructoresA -->
-
-            <article class="news-card">
-
-
-                <a
-                    href="#"
-                    class="news-image"
-                >
-
-                    <div class="image-placeholder">
+</div>
+<div class="news-grid">
+<!-- Conociendo a los instructoresA -->
+<article class="news-card">
+<a class="news-image" href="#">
+<div class="image-placeholder">
                         Conociendo a los instructores
                     </div>
-
-                </a>
-
-
-                <div class="category">
+</a>
+<div class="category">
                     Conociendo a los instructores
                 </div>
-
-
-                <h3>
+<h3>
                     Herramientas digitales para la
                     práctica médica
                 </h3>
-
-
-                <p>
+<p>
                     Tecnologías que permiten mejorar
                     procesos, facilitar el acceso a la
                     información y apoyar la atención.
                 </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
+<a class="read-more" href="#">
                     Leer más →
                 </a>
-
-            </article>
-
-
-
-            <!-- IA -->
-
-            <article class="news-card">
-
-
-                <a
-                    href="#"
-                    class="news-image"
-                >
-
-                    <div class="image-placeholder">
+</article>
+<!-- IA -->
+<article class="news-card">
+<a class="news-image" href="#">
+<div class="image-placeholder">
                         Inteligencia artificial
                     </div>
-
-                </a>
-
-
-                <div class="category">
+</a>
+<div class="category">
                     Inteligencia artificial
                 </div>
-
-
-                <h3>
+<h3>
                     Inteligencia artificial:
                     oportunidades y retos
                 </h3>
-
-
-                <p>
+<p>
                     Una aproximación al papel que
                     tienen las nuevas herramientas de
                     inteligencia artificial en salud.
                 </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
+<a class="read-more" href="#">
                     Leer más →
                 </a>
-
-            </article>
-
-
-
-            <!-- TELEMEDICINA -->
-
-            <article class="news-card">
-
-
-                <a
-                    href="#"
-                    class="news-image"
-                >
-
-                    <div class="image-placeholder">
+</article>
+<!-- TELEMEDICINA -->
+<article class="news-card">
+<a class="news-image" href="#">
+<div class="image-placeholder">
                         Telemedicina
                     </div>
-
-                </a>
-
-
-                <div class="category">
+</a>
+<div class="category">
                     Telemedicina
                 </div>
-
-
-                <h3>
+<h3>
                     Nuevas posibilidades para la
                     atención a distancia
                 </h3>
-
-
-                <p>
+<p>
                     La telemedicina continúa ampliando
                     las posibilidades de atención y
                     acompañamiento de los pacientes.
                 </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
+<a class="read-more" href="#">
                     Leer más →
                 </a>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
+</article>
+</div>
+</section>
+<!-- =================================================
          Impacto de la Salud Digital
     ================================================== -->
-
-    <section
-        class="featured-section"
-        id="innovacion"
-    >
-
-
-        <div class="featured-content">
-
-
-            <a
-                href="#"
-                class="featured-image"
-            >
-
-                <div class="image-placeholder">
+<section class="featured-section" id="innovacion">
+<div class="featured-content">
+<a class="featured-image" href="#">
+<div class="image-placeholder">
                     Impacto de la Salud Digital
                 </div>
-
-            </a>
-
-
-
-            <article class="featured-text">
-
-
-                <div class="category">
+</a>
+<article class="featured-text">
+<div class="category">
                     Impacto de la Salud Digital
                 </div>
-
-
-                <h2>
+<h2>
                     Ideas que pueden convertirse
                     en soluciones para la salud
                 </h2>
-
-
-                <p>
+<p>
                     Conoce proyectos, iniciativas y
                     propuestas que buscan aprovechar
                     la tecnología para responder a
                     algunos de los desafíos actuales
                     de la atención y educación en salud.
                 </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
+<a class="read-more" href="#">
                     Conocer proyecto →
                 </a>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
+</article>
+</div>
+</section>
+<!-- =================================================
          Salud digital para Dummies
     ================================================== -->
-
-    <section
-        class="section"
-        id="educacion"
-    >
-
-
-        <div class="section-heading">
-
-            <h2>
+<section class="section" id="educacion">
+<div class="section-heading">
+<h2>
                 Salud digital para Dummies
             </h2>
-
-        </div>
-
-
-
-        <div class="four-grid">
-
-
-            <article class="small-news">
-
-                <div class="category">
+</div>
+<div class="four-grid">
+<article class="small-news">
+<div class="category">
                     Académico
                 </div>
-
-                <h3>
+<h3>
                     Nuevas actividades para
                     nuestra comunidad
                 </h3>
-
-                <p>
+<p>
                     Conoce las actividades académicas
                     y formativas de este mes.
                 </p>
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
+<a class="read-more" href="#">
                     Leer más →
                 </a>
-
-            </article>
-
-
-
-            <article class="small-news">
-
-                <div class="category">
+</article>
+<article class="small-news">
+<div class="category">
                     Formación
                 </div>
-
-                <h3>
+<h3>
                     Aprender salud digital
                     desde nuevas perspectivas
                 </h3>
-
-                <p>
+<p>
                     Recursos y experiencias para
                     fortalecer la formación.
                 </p>
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
+<a class="read-more" href="#">
                     Leer más →
                 </a>
-
-            </article>
-
-
-
-            <article class="small-news">
-
-                <div class="category">
+</article>
+<article class="small-news">
+<div class="category">
                     Docencia
                 </div>
-
-                <h3>
+<h3>
                     Tecnología al servicio
                     de la enseñanza
                 </h3>
-
-                <p>
+<p>
                     Nuevas herramientas para
                     enriquecer los procesos educativos.
                 </p>
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
+<a class="read-more" href="#">
                     Leer más →
                 </a>
-
-            </article>
-
-
-
-            <article class="small-news">
-
-                <div class="category">
+</article>
+<article class="small-news">
+<div class="category">
                     Eventos
                 </div>
-
-                <h3>
+<h3>
                     Lo que viene este mes
                 </h3>
-
-                <p>
+<p>
                     Consulta próximas actividades,
                     talleres y encuentros.
                 </p>
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
-                    Leer más →
-                </a>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
+<div class="article-details"><h4>Actividades, talleres y encuentros para nuestra comunidad</h4><p>Este espacio reúne las próximas actividades de interés para quienes forman parte de nuestra comunidad académica.</p><p>Revisa fechas, horarios y modalidades antes de participar para organizar tu agenda y aprovechar cada oportunidad de formación.</p><ul><li>Consulta las fechas.</li><li>Revisa la modalidad de participación.</li><li>Mantente atento a nuevas actividades.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
+</article>
+</div>
+</section>
+<!-- =================================================
          La Salud Digital más cerca de ti
     ================================================== -->
-
-    <section
-        class="section"
-        id="comunidad"
-    >
-
-
-        <div class="section-heading">
-
-            <h2>
+<section class="section" id="comunidad">
+<div class="section-heading">
+<h2>
                 La Salud Digital más cerca de ti
             </h2>
-
-        </div>
-
-
-
-        <div class="news-grid">
-
-
-            <article class="news-card">
-
-
-                <a
-                    href="#"
-                    class="news-image"
-                >
-
-                    <div class="image-placeholder">
+</div>
+<div class="news-grid">
+<article class="news-card">
+<a class="news-image" href="#">
+<div class="image-placeholder">
                         Comunidad
                     </div>
-
-                </a>
-
-
-                <div class="category">
+</a>
+<div class="category">
                     Comunidad
                 </div>
-
-
-                <h3>
+<h3>
                     Lo que hacemos juntos
                 </h3>
-
-
-                <p>
+<p>
                     Historias, actividades y proyectos
                     que forman parte de nuestra
                     comunidad.
                 </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
-                    Leer más →
-                </a>
-
-            </article>
-
-
-
-            <article class="news-card">
-
-
-                <a
-                    href="#"
-                    class="news-image"
-                >
-
-                    <div class="image-placeholder">
+<div class="article-details"><h4>La comunidad también forma parte de la transformación digital</h4><p>La Salud Digital se construye de manera colectiva. Estudiantes, docentes y profesionales pueden aportar experiencias y conocimientos que ayudan a desarrollar nuevas ideas.</p><p>Compartir lo que hacemos permite reconocer proyectos, aprendizajes y oportunidades de colaboración que quizá no serían visibles de manera individual.</p><p>Este espacio busca acercar esas experiencias y fortalecer el sentido de comunidad.</p><ul><li>Compartir experiencias.</li><li>Reconocer el trabajo colectivo.</li><li>Crear nuevas colaboraciones.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
+</article>
+<article class="news-card">
+<a class="news-image" href="#">
+<div class="image-placeholder">
                         Actividades
                     </div>
-
-                </a>
-
-
-                <div class="category">
+</a>
+<div class="category">
                     Actividades
                 </div>
-
-
-                <h3>
+<h3>
                     Una comunidad que participa
                 </h3>
-
-
-                <p>
+<p>
                     Conoce las experiencias y
                     actividades de quienes forman
                     parte del proyecto.
                 </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
-                    Leer más →
-                </a>
-
-            </article>
-
-
-
-            <article class="news-card">
-
-
-                <a
-                    href="#"
-                    class="news-image"
-                >
-
-                    <div class="image-placeholder">
+<div class="article-details"><h4>Participar es una forma de aprender y contribuir</h4><p>Una comunidad activa se fortalece cuando sus integrantes participan, proponen ideas y colaboran en proyectos.</p><p>Las actividades compartidas permiten generar vínculos y encontrar nuevas oportunidades para aprender. Cada participación puede convertirse en una experiencia que aporte al crecimiento colectivo.</p><ul><li>Participa en las actividades.</li><li>Propón nuevas ideas.</li><li>Comparte lo que has aprendido.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
+</article>
+<article class="news-card">
+<a class="news-image" href="#">
+<div class="image-placeholder">
                         Colaboración
                     </div>
-
-                </a>
-
-
-                <div class="category">
+</a>
+<div class="category">
                     Colaboración
                 </div>
-
-
-                <h3>
+<h3>
                     Proyectos que construimos
                     en comunidad
                 </h3>
-
-
-                <p>
+<p>
                     Conoce iniciativas y
                     colaboraciones que generan
                     nuevas oportunidades.
                 </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
+<a class="read-more" href="#">
                     Leer más →
                 </a>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
+</article>
+</div>
+</section>
+<!-- =================================================
          Lo nuevo de la Salud Digital
     ================================================== -->
-
-    <section
-        class="section"
-        id="cultura"
-    >
-
-
-        <div class="section-heading">
-
-            <h2>
+<section class="section" id="cultura">
+<div class="section-heading">
+<h2>
                 Lo nuevo de la Salud Digital
             </h2>
-
-        </div>
-
-
-
-        <div class="four-grid">
-
-
-            <article class="small-news">
-
-                <div class="category">
+</div>
+<div class="four-grid">
+<article class="small-news">
+<div class="category">
                     Lo nuevo de la Salud Digital
                 </div>
-
-                <h3>
+<h3>
                     Recomendaciones del mes
                 </h3>
-
-                <p>
+<p>
                     Libros, contenidos y recursos
                     para explorar nuevas ideas.
                 </p>
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
-                    Leer más →
-                </a>
-
-            </article>
-
-
-
-            <article class="small-news">
-
-                <div class="category">
+<div class="article-details"><h4>Recursos para seguir explorando Salud Digital</h4><p>Cada mes podemos descubrir nuevos libros, recursos y contenidos que complementen nuestra formación.</p><p>Las recomendaciones buscan acercar diferentes perspectivas sobre ciencia, tecnología, educación y salud, para que cada lector pueda encontrar materiales de acuerdo con sus intereses.</p><ul><li>Explora nuevos temas.</li><li>Contrasta diferentes perspectivas.</li><li>Comparte tus propias recomendaciones.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
+</article>
+<article class="small-news">
+<div class="category">
                     Lectura
                 </div>
-
-                <h3>
+<h3>
                     Para leer y reflexionar
                 </h3>
-
-                <p>
+<p>
                     Una selección de contenidos
                     relacionados con ciencia y salud.
                 </p>
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
-                    Leer más →
-                </a>
-
-            </article>
-
-
-
-            <article class="small-news">
-
-                <div class="category">
+<div class="article-details"><h4>Porque aprender también significa detenerse a pensar</h4><p>La lectura permite conocer ideas diferentes y cuestionar aquello que damos por sentado.</p><p>En Salud Digital, reflexionar sobre tecnología implica considerar no solamente lo que una herramienta puede hacer, sino también cómo cambia la relación entre las personas, la información y los servicios de salud.</p><ul><li>Lee con mirada crítica.</li><li>Relaciona las ideas con tu contexto.</li><li>Genera nuevas preguntas.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
+</article>
+<article class="small-news">
+<div class="category">
                     Arte
                 </div>
-
-                <h3>
+<h3>
                     La salud también se comunica
                     a través del arte
                 </h3>
-
-                <p>
+<p>
                     Exploramos nuevas formas de
                     comunicar conocimiento.
                 </p>
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
+<a class="read-more" href="#">
                     Leer más →
                 </a>
-
-            </article>
-
-
-
-            <article class="small-news">
-
-                <div class="category">
+</article>
+<article class="small-news">
+<div class="category">
                     Agenda
                 </div>
-
-                <h3>
+<h3>
                     Lo que no te puedes perder
                 </h3>
-
-                <p>
+<p>
                     Consulta nuestras recomendaciones
                     para este mes.
                 </p>
-
-                <a
-                    href="#"
-                    class="read-more"
-                >
-                    Leer más →
-                </a>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
+<div class="article-details"><h4>Una selección para mantenerte al día</h4><p>En esta sección encontrarás recomendaciones y contenidos que pueden complementar tu recorrido por la Salud Digital.</p><p>Regresa durante el mes para descubrir nuevas propuestas y mantenerte al tanto de aquello que puede resultar de interés para nuestra comunidad.</p><ul><li>Guarda tus favoritos.</li><li>Comparte contenidos de interés.</li><li>Regresa para consultar nuevas recomendaciones.</li></ul></div><button aria-expanded="false" class="read-more article-toggle" type="button"><span class="open-label">Leer más →</span><span class="close-label">Cerrar artículo ↑</span></button>
+</article>
+</div>
+</section>
+<!-- =================================================
          DESCARGA DEL PDF
     ================================================== -->
-
-    <section class="download-section">
-
-
-        <div class="download-text">
-
-            <small>
+<section class="download-section">
+<div class="download-text">
+<small>
                 Edición completa
             </small>
-
-
-            <h2>
+<h2>
                 Agosto 2026
             </h2>
-
-
-            <p>
+<p>
                 Consulta o descarga la edición completa
                 del Boletín de Salud Digital.
             </p>
-
-        </div>
-
-
-
-        <a
-            href="ediciones/boletin-2026-08.pdf"
-            class="download-button"
-            target="_blank"
-            rel="noopener"
-        >
+</div>
+<a class="download-button" href="ediciones/boletin-2026-08.pdf" rel="noopener" target="_blank">
             📄 Leer / descargar PDF
         </a>
-
-
-    </section>
-
-
-
-    <!-- =================================================
+</section>
+<!-- =================================================
          HEMEROTECA
     ================================================== -->
-
-    <section class="archive-section">
-
-
-        <div class="archive-label">
+<section class="archive-section">
+<div class="archive-label">
             Archivo
         </div>
-
-
-        <h2>
+<h2>
             ¿Buscas una edición anterior?
         </h2>
-
-
-        <p>
+<p>
             Explora nuestra hemeroteca y consulta
             las publicaciones anteriores del Boletín
             de Salud Digital.
         </p>
-
-
-        <a
-            href="repositorio.html"
-            class="archive-button"
-        >
+<a class="archive-button" href="repositorio.html">
             Explorar Hemeroteca →
         </a>
-
-
-    </section>
-
-
+</section>
 </main>
-
-
-
 <!-- =====================================================
      FOOTER
 ===================================================== -->
-
 <footer>
-
-
-    <div class="footer-title">
+<div class="footer-title">
         Boletín SD
     </div>
-
-
-    <p>
+<p>
         Boletín de Salud Digital
     </p>
-
-
-    <p>
+<p>
         Facultad de Medicina
     </p>
-
-
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".article-toggle").forEach(function (button) {
+        button.addEventListener("click", function () {
+            const article = button.closest("article, .featured-text");
+            if (!article) return;
 
+            const details = article.querySelector(".article-details");
+            if (!details) return;
 
-</body>
+            const isOpen = details.classList.toggle("visible");
 
+            button.classList.toggle("expanded", isOpen);
+            button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+            if (isOpen) {
+                setTimeout(function () {
+                    const y = article.getBoundingClientRect().top + window.scrollY - 125;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                }, 100);
+            }
+        });
+    });
+});
+</script></body>
 </html>
