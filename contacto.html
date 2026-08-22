@@ -1,29 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="es">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Contacto | Boletín SD</title>
-
-
-    <!-- =====================================================
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacto | Boletín SD</title>
+<!-- =====================================================
          EMAILJS
     ====================================================== -->
-
-    <script
-        type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-
-
-    <style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" type="text/javascript">
+</script>
+<style>
 
         /* =====================================================
            CONFIGURACIÓN GENERAL
@@ -830,89 +817,204 @@
 
         }
 
-    </style>
+    
+/* =====================================================
+   NUEVO DISEÑO — ACERCA DEL PROYECTO
+   Inspirado en la composición de Hemeroteca
+===================================================== */
 
+body {
+    background: #f5f6f8;
+}
+
+main {
+    max-width: 100%;
+    padding: 0 0 100px;
+}
+
+.intro {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 88px 45px 78px;
+    text-align: center;
+    background: #f5f6f8;
+    border-bottom: 1px solid #d8dde2;
+}
+
+.intro-label {
+    color: #084B7A;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.intro h1 {
+    color: #084B7A;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(58px, 7vw, 100px);
+    font-weight: normal;
+    line-height: 1;
+    margin: 0 auto 42px;
+    max-width: 1250px;
+}
+
+.intro p {
+    color: #62666a;
+    font-size: 21px;
+    line-height: 1.75;
+    max-width: 1050px;
+    margin: 0 auto 18px;
+}
+
+.intro p:last-child {
+    margin-bottom: 0;
+}
+
+.intro strong {
+    color: #084B7A;
+    font-weight: 700;
+}
+
+/* La siguiente sección conserva el contenido original,
+   pero ahora respira como la Hemeroteca. */
+.participate {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 75px 35px 0;
+    border-top: 0;
+    position: relative;
+}
+
+.participate::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 35px;
+    right: 35px;
+    height: 1px;
+    background: #d8dde2;
+}
+
+.participate-label {
+    color: #084B7A;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.participate-info h2 {
+    color: #222;
+}
+
+.contact-form {
+    background: #ffffff;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .intro {
+        padding: 70px 30px 65px;
+    }
+
+    .intro h1 {
+        font-size: clamp(52px, 9vw, 78px);
+    }
+
+    .intro p {
+        font-size: 18px;
+        line-height: 1.75;
+    }
+
+    .participate {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .participate::before {
+        left: 25px;
+        right: 25px;
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    .intro {
+        padding: 55px 20px 50px;
+    }
+
+    .intro-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 18px;
+    }
+
+    .intro h1 {
+        font-size: 48px;
+        line-height: 1.03;
+        margin-bottom: 28px;
+    }
+
+    .intro p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .participate {
+        padding: 55px 18px 0;
+    }
+
+    .participate::before {
+        left: 18px;
+        right: 18px;
+    }
+}
+</style>
 </head>
-
-
-
 <body>
-
-
 <!-- =====================================================
      HEADER
 ===================================================== -->
-
 <header>
-
-    <div class="header-container">
-
-
-        <a
-            href="index.html"
-            class="logo"
-        >
+<div class="header-container">
+<a class="logo" href="index.html">
 
             Boletín SD
 
             <span class="logo-subtitle">
                 Salud Digital · Facultad de Medicina
             </span>
-
-        </a>
-
-
-        <nav class="main-nav">
-
-            <a href="index.html">
+</a>
+<nav class="main-nav">
+<a href="index.html">
                 Inicio
             </a>
-
-            <a href="boletin.html">
+<a href="boletin.html">
                 Boletín SD
             </a>
-
-            <a href="repositorio.html">
+<a href="repositorio.html">
                 Hemeroteca
             </a>
-
-            <a
-                href="contacto.html"
-                class="active"
-            >
+<a class="active" href="contacto.html">
                 Contacto
             </a>
-
-        </nav>
-
-    </div>
-
+</nav>
+</div>
 </header>
-
-
-
 <!-- =====================================================
      CONTENIDO
 ===================================================== -->
-
 <main>
-
-
-    <!-- INTRODUCCIÓN -->
-
-    <section class="intro">
-
-        <div class="intro-label">
+<!-- INTRODUCCIÓN -->
+<section class="intro">
+<div class="intro-label">
             Acerca del proyecto
         </div>
-
-
-        <h1>
+<h1>
             Conoce acerca de nosotros
         </h1>
-
-
-        <p>
+<p>
             Este espacio nace con la finalidad de
             <strong>
                 compartir información relevante,
@@ -923,9 +1025,7 @@
             en <strong>Salud Digital</strong> dentro de
             nuestra comunidad académica.
         </p>
-
-
-        <p>
+<p>
             Un lugar para
             <strong>
                 aprender, compartir y mantenernos al día
@@ -934,45 +1034,29 @@
             están transformando la educación y la
             práctica en salud.
         </p>
-
-    </section>
-
-
-
-    <!-- =================================================
+</section>
+<!-- =================================================
          PARTICIPACIÓN
     ================================================== -->
-
-    <section class="participate">
-
-
-        <!-- INFORMACIÓN -->
-
-        <div class="participate-info">
-
-            <div class="participate-label">
+<section class="participate">
+<!-- INFORMACIÓN -->
+<div class="participate-info">
+<div class="participate-label">
                 Sé parte del boletín
             </div>
-
-
-            <h2>
+<h2>
                 ¿Quieres reportar
                 una nota?
             </h2>
-
-
-            <p>
+<p>
                 Si quieres ser parte de este proyecto,
                 puedes ponerte en contacto con nosotros
                 para proponer una nota, compartir una
                 experiencia o participar en el desarrollo
                 del boletín.
             </p>
-
-
-            <div class="requirement">
-
-                <strong>
+<div class="requirement">
+<strong>
                     Importante:
                 </strong>
 
@@ -982,246 +1066,117 @@
                 instructor.
 
             </div>
-
-        </div>
-
-
-
-        <!-- =================================================
+</div>
+<!-- =================================================
              FORMULARIO
         ================================================== -->
-
-        <div class="contact-form">
-
-
-            <h2 class="form-title">
+<div class="contact-form">
+<h2 class="form-title">
                 Envíanos tu propuesta
             </h2>
-
-
-            <form id="contact-form">
-
-
-                <!-- NOMBRE + PUESTO -->
-
-                <div class="form-row">
-
-
-                    <div class="form-group">
-
-                        <label for="nombre">
+<form id="contact-form">
+<!-- NOMBRE + PUESTO -->
+<div class="form-row">
+<div class="form-group">
+<label for="nombre">
                             Nombre
                         </label>
-
-                        <input
-                            type="text"
-                            id="nombre"
-                            name="nombre"
-                            placeholder="Escribe tu nombre completo"
-                            required
-                        >
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label for="puesto">
+<input id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="puesto">
                             Puesto
                         </label>
-
-                        <select
-                            id="puesto"
-                            name="puesto"
-                            required
-                        >
-
-                            <option value="">
+<select id="puesto" name="puesto" required="">
+<option value="">
                                 Selecciona una opción
                             </option>
-
-                            <option value="Profesor">
+<option value="Profesor">
                                 Profesor
                             </option>
-
-                            <option value="Ayudante de profesor">
+<option value="Ayudante de profesor">
                                 Ayudante de profesor
                             </option>
-
-                            <option value="Instructor">
+<option value="Instructor">
                                 Instructor
                             </option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- TELÉFONO + CORREO -->
-
-                <div class="form-row">
-
-
-                    <div class="form-group">
-
-                        <label for="telefono">
+</select>
+</div>
+</div>
+<!-- TELÉFONO + CORREO -->
+<div class="form-row">
+<div class="form-group">
+<label for="telefono">
                             Teléfono
                         </label>
-
-                        <input
-                            type="tel"
-                            id="telefono"
-                            name="telefono"
-                            placeholder="Número de teléfono"
-                            required
-                        >
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label for="correo">
+<input id="telefono" name="telefono" placeholder="Número de teléfono" required="" type="tel"/>
+</div>
+<div class="form-group">
+<label for="correo">
                             Correo electrónico
                         </label>
-
-                        <input
-                            type="email"
-                            id="correo"
-                            name="correo"
-                            placeholder="correo@ejemplo.com"
-                            required
-                        >
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- TIPO DE PARTICIPACIÓN -->
-
-                <div class="form-group">
-
-                    <label for="tipo_nota">
+<input id="correo" name="correo" placeholder="correo@ejemplo.com" required="" type="email"/>
+</div>
+</div>
+<!-- TIPO DE PARTICIPACIÓN -->
+<div class="form-group">
+<label for="tipo_nota">
                         ¿Cómo te gustaría participar?
                     </label>
-
-
-                    <select
-                        id="tipo_nota"
-                        name="tipo_nota"
-                        required
-                    >
-
-                        <option value="">
+<select id="tipo_nota" name="tipo_nota" required="">
+<option value="">
                             Selecciona una opción
                         </option>
-
-                        <option value="Nota personal">
+<option value="Nota personal">
                             Quiero compartir una nota sobre mí
                         </option>
-
-                        <option value="Actividad o proyecto">
+<option value="Actividad o proyecto">
                             Quiero compartir una actividad o proyecto
                         </option>
-
-                        <option value="Colaboración">
+<option value="Colaboración">
                             Quiero colaborar en el desarrollo del boletín
                         </option>
-
-                        <option value="Otro">
+<option value="Otro">
                             Otro
                         </option>
-
-                    </select>
-
-                </div>
-
-
-
-                <!-- MENSAJE -->
-
-                <div class="form-group">
-
-                    <label for="mensaje">
+</select>
+</div>
+<!-- MENSAJE -->
+<div class="form-group">
+<label for="mensaje">
                         Cuéntanos más
                     </label>
-
-
-                    <textarea
-                        id="mensaje"
-                        name="mensaje"
-                        placeholder="Cuéntanos brevemente qué te gustaría compartir o cómo te gustaría participar..."
-                        required
-                    ></textarea>
-
-                </div>
-
-
-
-                <!-- BOTÓN -->
-
-                <button
-                    type="submit"
-                    class="submit-button"
-                    id="submit-button"
-                >
+<textarea id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente qué te gustaría compartir o cómo te gustaría participar..." required=""></textarea>
+</div>
+<!-- BOTÓN -->
+<button class="submit-button" id="submit-button" type="submit">
 
                     Enviar propuesta →
 
                 </button>
-
-
-                <!-- ESTADO -->
-
-                <div
-                    id="form-status"
-                ></div>
-
-
-            </form>
-
-        </div>
-
-    </section>
-
-
+<!-- ESTADO -->
+<div id="form-status"></div>
+</form>
+</div>
+</section>
 </main>
-
-
-
 <!-- =====================================================
      FOOTER
 ===================================================== -->
-
 <footer>
-
-    <h3>
+<h3>
         Boletín SD
     </h3>
-
-    <p>
+<p>
         Boletín de Salud Digital
     </p>
-
-    <p>
+<p>
         Facultad de Medicina
     </p>
-
 </footer>
-
-
-
 <!-- =====================================================
      JAVASCRIPT / EMAILJS
 ===================================================== -->
-
 <script>
 
     /* =====================================================
@@ -1352,8 +1307,5 @@
     );
 
 </script>
-
-
 </body>
-
 </html>
