@@ -819,156 +819,130 @@
 
     
 /* =====================================================
-   NUEVO DISEÑO — ACERCA DEL PROYECTO
-   Inspirado en la composición de Hemeroteca
+   CONTACTO — MISMA COMPOSICIÓN VISUAL QUE HEMEROTECA
 ===================================================== */
-
+html { scroll-behavior: smooth; }
 body {
-    background: #f5f6f8;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8fa;
+    color: #333;
+    line-height: 1.6;
 }
-
 main {
-    max-width: 100%;
-    padding: 0 0 100px;
+    max-width: 1250px;
+    margin: auto;
+    padding: 70px 35px 100px;
 }
 
+/* INTRO EXACTAMENTE CON LA ESTRUCTURA DE HEMEROTECA */
 .intro {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 88px 45px 78px;
     text-align: center;
-    background: #f5f6f8;
-    border-bottom: 1px solid #d8dde2;
+    max-width: 850px;
+    margin: 0 auto 70px;
 }
-
 .intro-label {
+    display: inline-block;
     color: #084B7A;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 25px;
+    margin-bottom: 14px;
 }
-
 .intro h1 {
     color: #084B7A;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(58px, 7vw, 100px);
+    font-size: clamp(38px, 5vw, 60px);
     font-weight: normal;
-    line-height: 1;
-    margin: 0 auto 42px;
-    max-width: 1250px;
+    line-height: 1.1;
+    margin-bottom: 18px;
 }
-
 .intro p {
-    color: #62666a;
-    font-size: 21px;
-    line-height: 1.75;
-    max-width: 1050px;
+    color: #666;
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 720px;
     margin: 0 auto 18px;
 }
+.intro p:last-child { margin-bottom: 0; }
+.intro strong { color: #084B7A; }
 
-.intro p:last-child {
-    margin-bottom: 0;
+/* LÍNEA EDITORIAL: MISMA DE HEMEROTECA, CON EL NUEVO TEXTO */
+.linea-editorial {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 35px;
 }
-
-.intro strong {
-    color: #084B7A;
-    font-weight: 700;
-}
-
-/* La siguiente sección conserva el contenido original,
-   pero ahora respira como la Hemeroteca. */
-.participate {
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 75px 35px 0;
-    border-top: 0;
-    position: relative;
-}
-
-.participate::before {
+.linea-editorial::before,
+.linea-editorial::after {
     content: "";
-    position: absolute;
-    top: 0;
-    left: 35px;
-    right: 35px;
     height: 1px;
     background: #d8dde2;
+    flex: 1;
+}
+.linea-editorial span {
+    color: #084B7A;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
+/* PARTICIPACIÓN: conserva el formulario original */
+.participate {
+    display: grid;
+    grid-template-columns: minmax(250px, .8fr) minmax(400px, 1.5fr);
+    gap: 70px;
+    border-top: none;
+    padding-top: 0;
+}
+.participate-info { padding-top: 5px; }
 .participate-label {
     color: #084B7A;
-    font-size: 12px;
-    letter-spacing: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
-
 .participate-info h2 {
-    color: #222;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 38px;
+    font-weight: normal;
+    line-height: 1.15;
+    margin-bottom: 20px;
 }
-
-.contact-form {
-    background: #ffffff;
+.participate-info p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
+.requirement {
+    border-left: 3px solid #084B7A;
+    padding: 15px 20px;
+    background: #f4f7f9;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+}
+.requirement strong { color: #084B7A; }
 
-/* Tablet */
-@media (max-width: 900px) {
-    .intro {
-        padding: 70px 30px 65px;
-    }
-
-    .intro h1 {
-        font-size: clamp(52px, 9vw, 78px);
-    }
-
-    .intro p {
-        font-size: 18px;
-        line-height: 1.75;
-    }
-
+@media (max-width: 850px) {
+    main { padding: 50px 20px 70px; }
     .participate {
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-
-    .participate::before {
-        left: 25px;
-        right: 25px;
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 }
-
-/* Celular */
-@media (max-width: 600px) {
-    .intro {
-        padding: 55px 20px 50px;
-    }
-
-    .intro-label {
-        font-size: 10px;
-        letter-spacing: 3px;
-        margin-bottom: 18px;
-    }
-
-    .intro h1 {
-        font-size: 48px;
-        line-height: 1.03;
-        margin-bottom: 28px;
-    }
-
-    .intro p {
-        font-size: 15px;
-        line-height: 1.8;
-    }
-
-    .participate {
-        padding: 55px 18px 0;
-    }
-
-    .participate::before {
-        left: 18px;
-        right: 18px;
-    }
+@media (max-width: 550px) {
+    .intro { margin-bottom: 50px; }
+    .intro h1 { font-size: 40px; }
+    .intro p { font-size: 15px; }
+    .linea-editorial { gap: 10px; }
+    .linea-editorial span { font-size: 10px; letter-spacing: 1.5px; }
 }
 </style>
 </head>
@@ -1038,12 +1012,10 @@ main {
 <!-- =================================================
          PARTICIPACIÓN
     ================================================== -->
-<section class="participate">
+<div class="linea-editorial"><span>SÉ PARTE DEL BOLETÍN</span></div><section class="participate">
 <!-- INFORMACIÓN -->
 <div class="participate-info">
-<div class="participate-label">
-                Sé parte del boletín
-            </div>
+
 <h2>
                 ¿Quieres reportar
                 una nota?
