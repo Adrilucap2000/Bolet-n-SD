@@ -2,11 +2,8 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Hemeroteca | Boletín SD</title>
 
@@ -41,6 +38,7 @@
         header {
             background: #084B7A;
             color: white;
+
             padding: 22px 40px;
 
             display: flex;
@@ -55,18 +53,15 @@
         }
 
 
-        /* Logo / nombre */
-
         .logo {
             color: white;
             text-decoration: none;
+
             font-size: 23px;
             font-weight: bold;
             letter-spacing: 0.5px;
         }
 
-
-        /* Navegación */
 
         nav {
             display: flex;
@@ -74,9 +69,11 @@
             gap: 28px;
         }
 
+
         nav a {
             color: white;
             text-decoration: none;
+
             font-size: 15px;
             font-weight: 600;
 
@@ -85,12 +82,11 @@
             transition: opacity 0.3s ease;
         }
 
+
         nav a:hover {
             opacity: 0.75;
         }
 
-
-        /* Línea debajo del apartado activo */
 
         nav a.activo::after {
             content: "";
@@ -113,20 +109,25 @@
 
         main {
             max-width: 1250px;
+
             margin: auto;
+
             padding: 70px 35px 100px;
         }
 
 
         /* =====================================================
-           ENCABEZADO DE HEMEROTECA
+           INTRODUCCIÓN
         ===================================================== */
 
         .intro {
             text-align: center;
+
             max-width: 850px;
+
             margin: 0 auto 70px;
         }
+
 
         .etiqueta {
             display: inline-block;
@@ -137,11 +138,11 @@
             font-weight: bold;
 
             letter-spacing: 3px;
-
             text-transform: uppercase;
 
             margin-bottom: 14px;
         }
+
 
         .intro h1 {
             color: #084B7A;
@@ -154,6 +155,7 @@
 
             margin-bottom: 18px;
         }
+
 
         .intro p {
             color: #666;
@@ -172,11 +174,14 @@
 
         .linea-editorial {
             display: flex;
+
             align-items: center;
+
             gap: 18px;
 
             margin-bottom: 35px;
         }
+
 
         .linea-editorial::before,
         .linea-editorial::after {
@@ -189,11 +194,11 @@
             flex: 1;
         }
 
+
         .linea-editorial span {
             color: #084B7A;
 
             font-size: 13px;
-
             font-weight: bold;
 
             letter-spacing: 2px;
@@ -210,13 +215,17 @@
             margin-bottom: 75px;
         }
 
+
         .year-title {
             display: flex;
-            align-items: center;
+
+            align-items: baseline;
+
             gap: 15px;
 
             margin-bottom: 30px;
         }
+
 
         .year-title h2 {
             color: #222;
@@ -228,6 +237,7 @@
             font-weight: normal;
         }
 
+
         .year-title span {
             color: #999;
 
@@ -238,7 +248,7 @@
 
 
         /* =====================================================
-           GRID DE EDICIONES
+           GRID
         ===================================================== */
 
         .ediciones-grid {
@@ -252,16 +262,16 @@
 
 
         /* =====================================================
-           TARJETA DE EDICIÓN
+           TARJETAS
         ===================================================== */
 
         .edicion-card {
-
             background: white;
 
             border: 1px solid #e4e7ea;
 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.06);
 
             cursor: pointer;
 
@@ -272,8 +282,8 @@
             overflow: hidden;
         }
 
-        .edicion-card:hover {
 
+        .edicion-card:hover {
             transform: translateY(-8px);
 
             box-shadow:
@@ -281,7 +291,9 @@
         }
 
 
-        /* Imagen de portada */
+        /* =====================================================
+           PORTADA
+        ===================================================== */
 
         .portada-container {
             position: relative;
@@ -293,8 +305,8 @@
             aspect-ratio: 3 / 4;
         }
 
-        .portada-container img {
 
+        .portada-container img {
             width: 100%;
             height: 100%;
 
@@ -305,17 +317,18 @@
             transition: transform 0.5s ease;
         }
 
+
         .edicion-card:hover
         .portada-container img {
-
             transform: scale(1.035);
         }
 
 
-        /* Overlay */
+        /* =====================================================
+           OVERLAY
+        ===================================================== */
 
         .overlay {
-
             position: absolute;
 
             inset: 0;
@@ -338,16 +351,16 @@
             transition: opacity 0.35s ease;
         }
 
+
         .edicion-card:hover .overlay {
             opacity: 1;
         }
 
-        .overlay span {
 
+        .overlay span {
             color: white;
 
             font-size: 13px;
-
             font-weight: bold;
 
             letter-spacing: 1.5px;
@@ -356,14 +369,16 @@
         }
 
 
-        /* Información */
+        /* =====================================================
+           INFORMACIÓN DE TARJETA
+        ===================================================== */
 
         .card-info {
             padding: 23px 22px 26px;
         }
 
-        .card-number {
 
+        .card-number {
             color: #084B7A;
 
             font-size: 12px;
@@ -377,8 +392,8 @@
             margin-bottom: 7px;
         }
 
-        .card-info h3 {
 
+        .card-info h3 {
             font-family: Georgia, "Times New Roman", serif;
 
             font-size: 23px;
@@ -392,8 +407,8 @@
             margin-bottom: 10px;
         }
 
-        .card-date {
 
+        .card-date {
             color: #888;
 
             font-size: 13px;
@@ -405,22 +420,22 @@
         ===================================================== */
 
         #detalle-edicion {
-
             display: none;
 
             background: white;
 
             border-top: 5px solid #084B7A;
 
-            box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+            box-shadow:
+                0 15px 45px rgba(0,0,0,0.1);
 
             margin-top: 60px;
 
             padding: 55px;
         }
 
-        .detalle-contenido {
 
+        .detalle-contenido {
             display: grid;
 
             grid-template-columns:
@@ -433,10 +448,7 @@
         }
 
 
-        /* Portada grande */
-
         .detalle-portada {
-
             width: 100%;
 
             max-width: 420px;
@@ -447,8 +459,8 @@
                 0 20px 45px rgba(0,0,0,0.18);
         }
 
-        .detalle-portada img {
 
+        .detalle-portada img {
             display: block;
 
             width: 100%;
@@ -457,10 +469,11 @@
         }
 
 
-        /* Texto */
+        /* =====================================================
+           TEXTO DEL DETALLE
+        ===================================================== */
 
         .detalle-texto .numero {
-
             color: #084B7A;
 
             font-size: 13px;
@@ -474,8 +487,8 @@
             margin-bottom: 12px;
         }
 
-        .detalle-texto h2 {
 
+        .detalle-texto h2 {
             font-family: Georgia, "Times New Roman", serif;
 
             color: #222;
@@ -489,8 +502,8 @@
             margin-bottom: 12px;
         }
 
-        .detalle-fecha {
 
+        .detalle-fecha {
             color: #888;
 
             font-size: 14px;
@@ -498,8 +511,8 @@
             margin-bottom: 28px;
         }
 
-        .detalle-descripcion {
 
+        .detalle-descripcion {
             color: #555;
 
             font-size: 17px;
@@ -512,15 +525,16 @@
         }
 
 
-        /* Lista temática */
+        /* =====================================================
+           TEMAS
+        ===================================================== */
 
         .temas {
-
             margin-bottom: 32px;
         }
 
-        .temas-titulo {
 
+        .temas-titulo {
             font-size: 12px;
 
             font-weight: bold;
@@ -534,8 +548,8 @@
             margin-bottom: 12px;
         }
 
-        .temas-lista {
 
+        .temas-lista {
             display: flex;
 
             flex-wrap: wrap;
@@ -543,8 +557,8 @@
             gap: 8px;
         }
 
-        .tema {
 
+        .tema {
             background: #eef4f8;
 
             color: #084B7A;
@@ -557,10 +571,11 @@
         }
 
 
-        /* Botones */
+        /* =====================================================
+           BOTONES
+        ===================================================== */
 
         .botones {
-
             display: flex;
 
             flex-wrap: wrap;
@@ -568,12 +583,11 @@
             gap: 12px;
         }
 
-        .btn {
 
+        .btn {
             display: inline-flex;
 
             align-items: center;
-
             justify-content: center;
 
             padding: 13px 21px;
@@ -593,22 +607,22 @@
             transition: all 0.3s ease;
         }
 
-        .btn-principal {
 
+        .btn-principal {
             background: #084B7A;
 
             color: white;
         }
 
-        .btn-principal:hover {
 
+        .btn-principal:hover {
             background: #063653;
 
             transform: translateY(-2px);
         }
 
-        .btn-secundario {
 
+        .btn-secundario {
             background: white;
 
             color: #084B7A;
@@ -616,8 +630,8 @@
             border: 1px solid #084B7A;
         }
 
-        .btn-secundario:hover {
 
+        .btn-secundario:hover {
             background: #eef4f8;
         }
 
@@ -627,7 +641,6 @@
         ===================================================== */
 
         #visor-pdf {
-
             display: none;
 
             margin-top: 55px;
@@ -637,8 +650,8 @@
             padding: 25px;
         }
 
-        .visor-header {
 
+        .visor-header {
             display: flex;
 
             align-items: center;
@@ -650,8 +663,8 @@
             margin-bottom: 20px;
         }
 
-        .visor-titulo {
 
+        .visor-titulo {
             color: white;
 
             font-family: Georgia, "Times New Roman", serif;
@@ -659,8 +672,8 @@
             font-size: 22px;
         }
 
-        .visor-cerrar {
 
+        .visor-cerrar {
             background: transparent;
 
             border: 1px solid rgba(255,255,255,0.5);
@@ -678,15 +691,15 @@
             transition: 0.3s;
         }
 
-        .visor-cerrar:hover {
 
+        .visor-cerrar:hover {
             background: white;
 
             color: #084B7A;
         }
 
-        .pdf-container {
 
+        .pdf-container {
             background: #555;
 
             width: 100%;
@@ -694,8 +707,8 @@
             min-height: 850px;
         }
 
-        .pdf-container iframe {
 
+        .pdf-container iframe {
             display: block;
 
             width: 100%;
@@ -711,7 +724,6 @@
         ===================================================== */
 
         footer {
-
             background: #063653;
 
             color: white;
@@ -721,12 +733,10 @@
             padding: 35px 25px;
 
             font-size: 13px;
-
-            margin-top: 0;
         }
 
-        footer p {
 
+        footer p {
             opacity: 0.85;
 
             margin-bottom: 6px;
@@ -740,17 +750,15 @@
         @media (max-width: 850px) {
 
             header {
-
                 padding: 18px 22px;
 
                 flex-direction: column;
 
                 gap: 15px;
-
             }
 
-            nav {
 
+            nav {
                 gap: 16px;
 
                 flex-wrap: wrap;
@@ -758,35 +766,35 @@
                 justify-content: center;
             }
 
-            nav a {
 
+            nav a {
                 font-size: 13px;
             }
 
-            main {
 
+            main {
                 padding: 50px 20px 70px;
             }
 
-            #detalle-edicion {
 
+            #detalle-edicion {
                 padding: 35px 25px;
             }
 
-            .detalle-contenido {
 
+            .detalle-contenido {
                 grid-template-columns: 1fr;
 
                 gap: 40px;
             }
 
-            .detalle-portada {
 
+            .detalle-portada {
                 max-width: 330px;
             }
 
-            .detalle-texto h2 {
 
+            .detalle-texto h2 {
                 font-size: 38px;
             }
 
@@ -796,51 +804,58 @@
         @media (max-width: 550px) {
 
             .intro {
-
                 margin-bottom: 50px;
             }
 
-            .intro h1 {
 
+            .intro h1 {
                 font-size: 40px;
             }
 
-            .intro p {
 
+            .intro p {
                 font-size: 15px;
             }
 
-            .ediciones-grid {
 
-                grid-template-columns: 1fr;
+            .year-title {
+                flex-direction: column;
 
+                align-items: flex-start;
+
+                gap: 2px;
             }
 
-            #detalle-edicion {
 
+            .ediciones-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            #detalle-edicion {
                 padding: 28px 18px;
             }
 
-            .detalle-texto h2 {
 
+            .detalle-texto h2 {
                 font-size: 32px;
             }
 
-            .detalle-descripcion {
 
+            .detalle-descripcion {
                 font-size: 15px;
             }
 
+
             .pdf-container,
             .pdf-container iframe {
-
                 min-height: 650px;
 
                 height: 650px;
             }
 
-            #visor-pdf {
 
+            #visor-pdf {
                 padding: 12px;
             }
 
@@ -863,6 +878,7 @@
     <a href="index.html" class="logo">
         Boletín SD
     </a>
+
 
     <nav>
 
@@ -887,14 +903,17 @@
 </header>
 
 
+
 <!-- =====================================================
-     CONTENIDO PRINCIPAL
+     CONTENIDO
 ===================================================== -->
 
 <main>
 
 
-    <!-- INTRODUCCIÓN -->
+    <!-- =================================================
+         INTRODUCCIÓN
+    ================================================== -->
 
     <section class="intro">
 
@@ -923,14 +942,16 @@
 
     <section class="year-section">
 
+
         <div class="linea-editorial">
             <span>Ediciones</span>
         </div>
 
+
         <div class="year-title">
 
             <h2>
-                2025
+                Ediciones 2025
             </h2>
 
             <span>
@@ -940,10 +961,13 @@
         </div>
 
 
+
         <div class="ediciones-grid">
 
 
-            <!-- EDICIÓN 01 -->
+            <!-- ==============================
+                 EDICIÓN 01
+            =============================== -->
 
             <article
                 class="edicion-card"
@@ -967,6 +991,7 @@
 
                 </div>
 
+
                 <div class="card-info">
 
                     <div class="card-number">
@@ -987,7 +1012,9 @@
 
 
 
-            <!-- EDICIÓN 02 -->
+            <!-- ==============================
+                 EDICIÓN 02
+            =============================== -->
 
             <article
                 class="edicion-card"
@@ -1011,6 +1038,7 @@
 
                 </div>
 
+
                 <div class="card-info">
 
                     <div class="card-number">
@@ -1031,7 +1059,9 @@
 
 
 
-            <!-- EDICIÓN 03 -->
+            <!-- ==============================
+                 EDICIÓN 03
+            =============================== -->
 
             <article
                 class="edicion-card"
@@ -1055,6 +1085,7 @@
 
                 </div>
 
+
                 <div class="card-info">
 
                     <div class="card-number">
@@ -1075,7 +1106,9 @@
 
 
 
-            <!-- EDICIÓN 04 -->
+            <!-- ==============================
+                 EDICIÓN 04
+            =============================== -->
 
             <article
                 class="edicion-card"
@@ -1099,6 +1132,7 @@
 
                 </div>
 
+
                 <div class="card-info">
 
                     <div class="card-number">
@@ -1117,8 +1151,11 @@
 
             </article>
 
-            
-            <!-- EDICIÓN 05 -->
+
+
+            <!-- ==============================
+                 EDICIÓN 05
+            =============================== -->
 
             <article
                 class="edicion-card"
@@ -1142,6 +1179,7 @@
 
                 </div>
 
+
                 <div class="card-info">
 
                     <div class="card-number">
@@ -1159,8 +1197,12 @@
                 </div>
 
             </article>
-          
-            <!-- EDICIÓN 06 -->
+
+
+
+            <!-- ==============================
+                 EDICIÓN 06
+            =============================== -->
 
             <article
                 class="edicion-card"
@@ -1184,6 +1226,7 @@
 
                 </div>
 
+
                 <div class="card-info">
 
                     <div class="card-number">
@@ -1201,9 +1244,12 @@
                 </div>
 
             </article>
-            
-            
-            <!-- EDICIÓN 07 -->
+
+
+
+            <!-- ==============================
+                 EDICIÓN 07
+            =============================== -->
 
             <article
                 class="edicion-card"
@@ -1227,6 +1273,7 @@
 
                 </div>
 
+
                 <div class="card-info">
 
                     <div class="card-number">
@@ -1244,21 +1291,30 @@
                 </div>
 
             </article>
-           
-  <!-- =================================================
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
          EDICIONES 2026
     ================================================== -->
 
     <section class="year-section">
 
+
         <div class="linea-editorial">
             <span>Ediciones</span>
         </div>
 
+
         <div class="year-title">
 
             <h2>
-                2026
+                Ediciones 2026
             </h2>
 
             <span>
@@ -1268,9 +1324,13 @@
         </div>
 
 
+
         <div class="ediciones-grid">
-            
-            <!-- EDICIÓN 08 -->
+
+
+            <!-- ==============================
+                 EDICIÓN 08
+            =============================== -->
 
             <article
                 class="edicion-card"
@@ -1281,7 +1341,7 @@
 
                     <img
                         src="portadas/portada-08.jpg"
-                        alt="Portada de la edición 04 del Boletín de Salud Digital"
+                        alt="Portada de la edición 08 del Boletín de Salud Digital"
                     >
 
                     <div class="overlay">
@@ -1293,6 +1353,7 @@
                     </div>
 
                 </div>
+
 
                 <div class="card-info">
 
@@ -1311,7 +1372,12 @@
                 </div>
 
             </article>
-   <!-- EDICIÓN 09 -->
+
+
+
+            <!-- ==============================
+                 EDICIÓN 09
+            =============================== -->
 
             <article
                 class="edicion-card"
@@ -1335,6 +1401,7 @@
 
                 </div>
 
+
                 <div class="card-info">
 
                     <div class="card-number">
@@ -1352,7 +1419,12 @@
                 </div>
 
             </article>
-               <!-- EDICIÓN 10 -->
+
+
+
+            <!-- ==============================
+                 EDICIÓN 10
+            =============================== -->
 
             <article
                 class="edicion-card"
@@ -1376,6 +1448,7 @@
 
                 </div>
 
+
                 <div class="card-info">
 
                     <div class="card-number">
@@ -1393,6 +1466,8 @@
                 </div>
 
             </article>
+
+
         </div>
 
     </section>
@@ -1400,15 +1475,13 @@
 
 
     <!-- =================================================
-         DETALLE DE LA EDICIÓN
+         DETALLE DE EDICIÓN
     ================================================== -->
 
     <section id="detalle-edicion">
 
         <div class="detalle-contenido">
 
-
-            <!-- PORTADA -->
 
             <div class="detalle-portada">
 
@@ -1421,7 +1494,6 @@
             </div>
 
 
-            <!-- INFORMACIÓN -->
 
             <div class="detalle-texto">
 
@@ -1430,14 +1502,17 @@
                     id="detalle-numero">
                 </div>
 
+
                 <h2
                     id="detalle-titulo">
                 </h2>
+
 
                 <div
                     class="detalle-fecha"
                     id="detalle-fecha">
                 </div>
+
 
                 <p
                     class="detalle-descripcion"
@@ -1467,6 +1542,7 @@
                     >
                         Leer edición completa →
                     </button>
+
 
                     <a
                         id="boton-descarga"
@@ -1500,6 +1576,7 @@
                 id="visor-titulo">
             </div>
 
+
             <button
                 class="visor-cerrar"
                 onclick="cerrarPDF()"
@@ -1526,6 +1603,7 @@
 </main>
 
 
+
 <!-- =====================================================
      PIE DE PÁGINA
 ===================================================== -->
@@ -1546,65 +1624,77 @@
 
 <script>
 
+
     /* =====================================================
-       INFORMACIÓN DE LAS EDICIONES
+       INFORMACIÓN DE TODAS LAS EDICIONES
+
+       IMPORTANTE:
+       2025 = 01 a 07
+       2026 = 08 en adelante
     ===================================================== */
+
 
     const ediciones = {
 
-        5: {
 
-            numero: "Edición No. 05",
+        /* =================================================
+           2025
+        ================================================= */
+
+
+        1: {
+
+            numero: "Edición No. 01",
 
             titulo:
-                "Innovación y tecnología",
+                "Conociendo al Departamento de Salud Digital y sus oportunidades para instructores",
 
             fecha:
-                "Agosto 2026",
+                "Junio 2025",
 
             descripcion:
-                "En esta edición exploramos las tendencias, herramientas y propuestas de innovación que están transformando la salud digital y fortaleciendo la formación de nuestra comunidad académica.",
+                "Primera edición del Boletín de Salud Digital, dedicada a presentar al Departamento de Salud Digital y las oportunidades disponibles para los instructores.",
 
             portada:
-                "portadas/portada-05.jpg",
+                "portadas/portada-01.jpg",
 
             pdf:
-                "ediciones/boletin-05.pdf",
+                "ediciones/boletin-01.pdf",
 
             temas: [
-                "Salud digital",
-                "Innovación",
-                "Tecnología",
-                "Educación médica"
+                "Departamento de Salud Digital",
+                "Instructores",
+                "Formación",
+                "Salud digital"
             ]
 
         },
 
 
-        4: {
+        2: {
 
-            numero: "Edición No. 04",
+            numero: "Edición No. 02",
 
             titulo:
-                "Tecnología y educación",
+                "Conociendo a quienes hacen posible la Salud Digital",
 
             fecha:
-                "Julio 2026",
+                "Julio 2025",
 
             descripcion:
-                "Una edición dedicada al papel de las tecnologías digitales en los procesos de enseñanza, aprendizaje y formación dentro del ámbito de la salud.",
+                "Segunda edición de El Saber del Tlacuache, dedicada a conocer a quienes forman parte del Departamento de Salud Digital y contribuyen a su desarrollo.",
 
             portada:
-                "portadas/portada-04.jpg",
+                "portadas/portada-02.jpg",
 
             pdf:
-                "ediciones/boletin-04.pdf",
+                "ediciones/boletin-02.pdf",
 
             temas: [
-                "Educación",
-                "Tecnología",
-                "Docencia",
-                "Salud digital"
+                "Comunidad",
+                "Instructores",
+                "Salud digital",
+                "Innovación"
             ]
 
         },
@@ -1618,10 +1708,10 @@
                 "Salud digital y comunidad",
 
             fecha:
-                "Junio 2026",
+                "Agosto 2025",
 
             descripcion:
-                "En esta edición presentamos contenidos relacionados con la transformación digital, la participación de nuestra comunidad y las nuevas oportunidades que ofrece la tecnología en salud.",
+                "Edición dedicada a temas relacionados con la salud digital, la comunidad y las oportunidades que ofrece la tecnología.",
 
             portada:
                 "portadas/portada-03.jpg",
@@ -1639,30 +1729,209 @@
         },
 
 
-        2: {
+        4: {
 
-            numero: "Edición No. 02",
+            numero: "Edición No. 04",
 
             titulo:
                 "Transformación digital",
 
             fecha:
-                "Mayo 2026",
+                "Septiembre 2025",
 
             descripcion:
-                "Una mirada a las herramientas y estrategias que permiten incorporar la transformación digital en los diferentes espacios de formación y práctica en salud.",
+                "Edición dedicada a la transformación digital y su impacto en los diferentes espacios relacionados con la salud.",
 
             portada:
-                "portadas/portada-02.jpg",
+                "portadas/portada-04.jpg",
 
             pdf:
-                "ediciones/boletin-02.pdf",
+                "ediciones/boletin-04.pdf",
 
             temas: [
                 "Transformación digital",
                 "Tecnología",
                 "Innovación",
-                "Formación"
+                "Salud digital"
+            ]
+
+        },
+
+
+        5: {
+
+            numero: "Edición No. 05",
+
+            titulo:
+                "Transformación digital",
+
+            fecha:
+                "Octubre 2025",
+
+            descripcion:
+                "Edición dedicada a temas de transformación digital, tecnología e innovación en salud.",
+
+            portada:
+                "portadas/portada-05.jpg",
+
+            pdf:
+                "ediciones/boletin-05.pdf",
+
+            temas: [
+                "Transformación digital",
+                "Tecnología",
+                "Innovación",
+                "Salud digital"
+            ]
+
+        },
+
+
+        6: {
+
+            numero: "Edición No. 06",
+
+            titulo:
+                "Transformación digital",
+
+            fecha:
+                "Noviembre 2025",
+
+            descripcion:
+                "Edición dedicada a la transformación digital y las nuevas herramientas relacionadas con la salud digital.",
+
+            portada:
+                "portadas/portada-06.jpg",
+
+            pdf:
+                "ediciones/boletin-06.pdf",
+
+            temas: [
+                "Transformación digital",
+                "Tecnología",
+                "Innovación",
+                "Salud digital"
+            ]
+
+        },
+
+
+        7: {
+
+            numero: "Edición No. 07",
+
+            titulo:
+                "Transformación digital",
+
+            fecha:
+                "Diciembre 2025",
+
+            descripcion:
+                "Edición dedicada a cerrar el año explorando temas relacionados con la transformación digital y la salud digital.",
+
+            portada:
+                "portadas/portada-07.jpg",
+
+            pdf:
+                "ediciones/boletin-07.pdf",
+
+            temas: [
+                "Transformación digital",
+                "Tecnología",
+                "Innovación",
+                "Salud digital"
+            ]
+
+        },
+
+
+        /* =================================================
+           2026
+        ================================================= */
+
+
+        8: {
+
+            numero: "Edición No. 08",
+
+            titulo:
+                "Transformación digital",
+
+            fecha:
+                "Enero 2026",
+
+            descripcion:
+                "Primera edición del año 2026, dedicada a contenidos relacionados con la transformación digital y la evolución de la salud digital.",
+
+            portada:
+                "portadas/portada-08.jpg",
+
+            pdf:
+                "ediciones/boletin-08.pdf",
+
+            temas: [
+                "Transformación digital",
+                "Tecnología",
+                "Innovación",
+                "Salud digital"
+            ]
+
+        },
+
+
+        9: {
+
+            numero: "Edición No. 09",
+
+            titulo:
+                "Transformación digital",
+
+            fecha:
+                "Febrero 2026",
+
+            descripcion:
+                "Edición dedicada a continuar explorando las herramientas, oportunidades y avances de la salud digital.",
+
+            portada:
+                "portadas/portada-09.jpg",
+
+            pdf:
+                "ediciones/boletin-09.pdf",
+
+            temas: [
+                "Transformación digital",
+                "Tecnología",
+                "Innovación",
+                "Salud digital"
+            ]
+
+        },
+
+
+        10: {
+
+            numero: "Edición No. 10",
+
+            titulo:
+                "Transformación digital",
+
+            fecha:
+                "Junio 2026",
+
+            descripcion:
+                "Edición correspondiente a junio de 2026, con contenidos relacionados con tecnología, innovación y salud digital.",
+
+            portada:
+                "portadas/portada-10.jpg",
+
+            pdf:
+                "ediciones/boletin-10.pdf",
+
+            temas: [
+                "Salud digital",
+                "Tecnología",
+                "Innovación",
+                "Transformación digital"
             ]
 
         }
@@ -1672,7 +1941,7 @@
 
 
     /* =====================================================
-       VARIABLE PARA SABER QUÉ EDICIÓN ESTÁ ABIERTA
+       EDICIÓN ACTUAL
     ===================================================== */
 
     let edicionActual = null;
@@ -1680,55 +1949,76 @@
 
 
     /* =====================================================
-       MOSTRAR INFORMACIÓN DE UNA EDICIÓN
+       MOSTRAR INFORMACIÓN
     ===================================================== */
 
     function mostrarEdicion(numero) {
 
         const edicion = ediciones[numero];
 
+
         if (!edicion) {
+
+            console.error(
+                "No existe la edición:",
+                numero
+            );
+
             return;
         }
+
 
         edicionActual = edicion;
 
 
-        /* Portada */
+
+        /* PORTADA */
 
         document.getElementById(
             "detalle-portada-img"
         ).src = edicion.portada;
 
 
-        /* Información */
+
+        /* NÚMERO */
 
         document.getElementById(
             "detalle-numero"
         ).textContent = edicion.numero;
 
 
+
+        /* TÍTULO */
+
         document.getElementById(
             "detalle-titulo"
         ).textContent = edicion.titulo;
 
+
+
+        /* FECHA */
 
         document.getElementById(
             "detalle-fecha"
         ).textContent = edicion.fecha;
 
 
+
+        /* DESCRIPCIÓN */
+
         document.getElementById(
             "detalle-descripcion"
         ).textContent = edicion.descripcion;
 
 
-        /* Temas */
+
+        /* TEMAS */
 
         const temas =
             document.getElementById(
                 "detalle-temas"
             );
+
 
         temas.innerHTML = "";
 
@@ -1739,39 +2029,49 @@
                 const etiqueta =
                     document.createElement("span");
 
-                etiqueta.className = "tema";
+                etiqueta.className =
+                    "tema";
 
-                etiqueta.textContent = tema;
+                etiqueta.textContent =
+                    tema;
 
-                temas.appendChild(etiqueta);
+                temas.appendChild(
+                    etiqueta
+                );
 
             }
         );
 
 
-        /* Botón descargar */
+
+        /* BOTÓN DE DESCARGA */
 
         document.getElementById(
             "boton-descarga"
         ).href = edicion.pdf;
 
 
-        /* Mostrar detalle */
+
+        /* MOSTRAR DETALLE */
 
         const detalle =
             document.getElementById(
                 "detalle-edicion"
             );
 
-        detalle.style.display = "block";
+
+        detalle.style.display =
+            "block";
 
 
-        /* Cerrar visor anterior */
+
+        /* CERRAR PDF */
 
         cerrarPDF();
 
 
-        /* Desplazarse */
+
+        /* DESPLAZAR */
 
         setTimeout(
             function() {
@@ -1805,10 +2105,12 @@
                 "visor-pdf"
             );
 
+
         const frame =
             document.getElementById(
                 "pdf-frame"
             );
+
 
         const titulo =
             document.getElementById(
@@ -1816,13 +2118,15 @@
             );
 
 
-        /* Cargar PDF */
+
+        /* PDF */
 
         frame.src =
             edicionActual.pdf;
 
 
-        /* Título */
+
+        /* TÍTULO DEL VISOR */
 
         titulo.textContent =
             edicionActual.numero +
@@ -1830,13 +2134,15 @@
             edicionActual.fecha;
 
 
-        /* Mostrar visor */
+
+        /* MOSTRAR */
 
         visor.style.display =
             "block";
 
 
-        /* Ir al visor */
+
+        /* DESPLAZAR */
 
         setTimeout(
             function() {
@@ -1865,6 +2171,7 @@
                 "visor-pdf"
             );
 
+
         const frame =
             document.getElementById(
                 "pdf-frame"
@@ -1875,14 +2182,10 @@
             "none";
 
 
-        /*
-            Quitamos el PDF del iframe
-            para evitar que siga cargando.
-        */
-
         frame.src = "";
 
     }
+
 
 </script>
 
