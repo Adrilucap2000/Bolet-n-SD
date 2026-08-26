@@ -5,16 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contacto | Boletín SD</title>
-<!-- =====================================================
-         EMAILJS
-    ====================================================== -->
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" type="text/javascript">
 </script>
 <style>
 
-        /* =====================================================
-           CONFIGURACIÓN GENERAL
-        ===================================================== */
+
 
         * {
             box-sizing: border-box;
@@ -41,11 +37,6 @@
 
             overflow-x: hidden;
         }
-
-
-        /* =====================================================
-           HEADER
-        ===================================================== */
 
         header {
 
@@ -85,11 +76,6 @@
 
             gap: 30px;
         }
-
-
-        /* =====================================================
-           LOGO
-        ====================================================== */
 
         .logo {
 
@@ -139,11 +125,6 @@
 
             opacity: .8;
         }
-
-
-        /* =====================================================
-           NAVEGACIÓN
-        ====================================================== */
 
         .main-nav {
 
@@ -205,9 +186,6 @@
         }
 
 
-        /* =====================================================
-           CONTENIDO
-        ====================================================== */
 
         main {
 
@@ -221,10 +199,6 @@
                 75px 35px 100px;
         }
 
-
-        /* =====================================================
-           ENCABEZADO
-        ====================================================== */
 
         .intro {
 
@@ -290,9 +264,6 @@
         }
 
 
-        /* =====================================================
-           BLOQUE DE PARTICIPACIÓN
-        ====================================================== */
 
         .participate {
 
@@ -384,11 +355,6 @@
 
             color: #084B7A;
         }
-
-
-        /* =====================================================
-           FORMULARIO
-        ====================================================== */
 
         .contact-form {
 
@@ -516,11 +482,6 @@
             cursor: pointer;
         }
 
-
-        /* =====================================================
-           BOTÓN
-        ====================================================== */
-
         .submit-button {
 
             width: 100%;
@@ -568,10 +529,6 @@
         }
 
 
-        /* =====================================================
-           MENSAJE DE ESTADO
-        ====================================================== */
-
         #form-status {
 
             display: none;
@@ -612,10 +569,6 @@
                 3px solid #8b3030;
         }
 
-
-        /* =====================================================
-           FOOTER
-        ====================================================== */
 
         footer {
 
@@ -658,10 +611,6 @@
             margin: 3px 0;
         }
 
-
-        /* =====================================================
-           TABLET
-        ====================================================== */
 
         @media (max-width: 900px) {
 
@@ -712,10 +661,6 @@
 
         }
 
-
-        /* =====================================================
-           CELULAR
-        ====================================================== */
 
         @media (max-width: 600px) {
 
@@ -817,10 +762,6 @@
 
         }
 
-    
-/* =====================================================
-   CONTACTO — MISMA COMPOSICIÓN VISUAL QUE HEMEROTECA
-===================================================== */
 html { scroll-behavior: smooth; }
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -834,7 +775,6 @@ main {
     padding: 70px 35px 100px;
 }
 
-/* INTRO EXACTAMENTE CON LA ESTRUCTURA DE HEMEROTECA */
 .intro {
     text-align: center;
     max-width: 850px;
@@ -867,7 +807,6 @@ main {
 .intro p:last-child { margin-bottom: 0; }
 .intro strong { color: #084B7A; }
 
-/* LÍNEA EDITORIAL: MISMA DE HEMEROTECA, CON EL NUEVO TEXTO */
 .linea-editorial {
     display: flex;
     align-items: center;
@@ -890,7 +829,6 @@ main {
     white-space: nowrap;
 }
 
-/* PARTICIPACIÓN: conserva el formulario original */
 .participate {
     display: grid;
     grid-template-columns: minmax(250px, .8fr) minmax(400px, 1.5fr);
@@ -947,9 +885,7 @@ main {
 </style>
 </head>
 <body>
-<!-- =====================================================
-     HEADER
-===================================================== -->
+
 <header>
 <div class="header-container">
 <a class="logo" href="index.html">
@@ -976,9 +912,7 @@ main {
 </nav>
 </div>
 </header>
-<!-- =====================================================
-     CONTENIDO
-===================================================== -->
+
 <main>
 <!-- INTRODUCCIÓN -->
 <section class="intro">
@@ -1009,9 +943,7 @@ main {
             práctica en salud.
         </p>
 </section>
-<!-- =================================================
-         PARTICIPACIÓN
-    ================================================== -->
+
 <div class="linea-editorial"><span>SÉ PARTE DEL BOLETÍN</span></div><section class="participate">
 <!-- INFORMACIÓN -->
 <div class="participate-info">
@@ -1039,9 +971,7 @@ main {
 
             </div>
 </div>
-<!-- =================================================
-             FORMULARIO
-        ================================================== -->
+
 <div class="contact-form">
 <h2 class="form-title">
                 Envíanos tu propuesta
@@ -1075,7 +1005,6 @@ main {
 </select>
 </div>
 </div>
-<!-- TELÉFONO + CORREO -->
 <div class="form-row">
 <div class="form-group">
 <label for="telefono">
@@ -1090,7 +1019,6 @@ main {
 <input id="correo" name="correo" placeholder="correo@ejemplo.com" required="" type="email"/>
 </div>
 </div>
-<!-- TIPO DE PARTICIPACIÓN -->
 <div class="form-group">
 <label for="tipo_nota">
                         ¿Cómo te gustaría participar?
@@ -1113,28 +1041,23 @@ main {
                         </option>
 </select>
 </div>
-<!-- MENSAJE -->
 <div class="form-group">
 <label for="mensaje">
                         Cuéntanos más
                     </label>
 <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente qué te gustaría compartir o cómo te gustaría participar..." required=""></textarea>
 </div>
-<!-- BOTÓN -->
 <button class="submit-button" id="submit-button" type="submit">
 
                     Enviar propuesta →
 
                 </button>
-<!-- ESTADO -->
 <div id="form-status"></div>
 </form>
 </div>
 </section>
 </main>
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+
 <footer>
 <h3>
         Boletín SD
@@ -1146,14 +1069,9 @@ main {
         Facultad de Medicina
     </p>
 </footer>
-<!-- =====================================================
-     JAVASCRIPT / EMAILJS
-===================================================== -->
+
 <script>
 
-    /* =====================================================
-       CONFIGURACIÓN EMAILJS
-    ====================================================== */
 
     emailjs.init({
         publicKey: "TU_PUBLIC_KEY"
@@ -1161,9 +1079,7 @@ main {
 
 
 
-    /* =====================================================
-       FORMULARIO
-    ====================================================== */
+  
 
     const form =
         document.getElementById("contact-form");
@@ -1197,10 +1113,6 @@ main {
                 "none";
 
 
-
-            /* =================================================
-               ENVÍO EMAILJS
-            ================================================= */
 
             emailjs.sendForm(
 
